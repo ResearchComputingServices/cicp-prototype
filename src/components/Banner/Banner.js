@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Zoom } from '@material-ui/core';
+import { Box } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 export const useStyles = makeStyles(() => ({
@@ -36,15 +36,10 @@ export const useStyles = makeStyles(() => ({
     mutedText: { color: '#6c757d' }
 }));
 
-const AnimatedChar = ({ children }) => {
+const HighlightedChar = ({ children }) => {
     const classes = useStyles();
     return (
-        <Zoom
-            in
-            style={{ transitionDuration: '700ms' }}
-        >
-            <h1 className={classes.title}>{children}</h1>
-        </Zoom>
+        <h1 className={classes.title}>{children}</h1>
     );
 };
 
@@ -69,7 +64,7 @@ const Banner = () => {
                         flexDirection='row'
                         m={2}
                     >
-                        <AnimatedChar>C</AnimatedChar><h2>HARITY</h2>
+                        <HighlightedChar>C</HighlightedChar><h2>HARITY</h2>
                     </Box>
                     <Box
                         alignItems='center'
@@ -77,7 +72,7 @@ const Banner = () => {
                         flexDirection='row'
                         m={2}
                     >
-                        <AnimatedChar>I</AnimatedChar><h2>NSIGHTS</h2>
+                        <HighlightedChar>I</HighlightedChar><h2>NSIGHTS</h2>
                     </Box>
                     <Box
                         alignItems='center'
@@ -85,7 +80,7 @@ const Banner = () => {
                         flexDirection='row'
                         m={2}
                     >
-                        <AnimatedChar>C</AnimatedChar><h2>ANADA</h2>
+                        <HighlightedChar>C</HighlightedChar><h2>ANADA</h2>
                     </Box>
                     <Box
                         alignItems='center'
@@ -93,7 +88,7 @@ const Banner = () => {
                         flexDirection='row'
                         m={2}
                     >
-                        <AnimatedChar>P</AnimatedChar><h2>ROJECT</h2>
+                        <HighlightedChar>P</HighlightedChar><h2>ROJECT</h2>
                     </Box>
                 </Box>
             </Box>
