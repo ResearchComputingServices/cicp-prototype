@@ -19,8 +19,7 @@ export const useStyles = makeStyles(() => ({
     loading: { display: 'none' },
     spinner: {
         marginLeft: '50%',
-        // TODO need to move this to theme
-        marginTop: 64,
+        marginTop: 80,
     },
     error: { marginTop: 30 },
 }));
@@ -38,7 +37,10 @@ function Layout({
     const [t] = useTranslation('common');
     const classes = useStyles();
     return (
-        <Box width='100%'>
+        <Box
+            height='100%'
+            width='100%'
+        >
             {loading && !error && (
                 <Box className={clsx({
                     [classes.spinner]: !linearProgress,

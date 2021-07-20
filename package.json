@@ -1,5 +1,5 @@
 {
-    "name": "srna-ui",
+    "name": "cicp",
     "version": "1.0.0",
     "private": true,
     "dependencies": {
@@ -13,6 +13,7 @@
         "@reduxjs/toolkit": "^1.5.0",
         "axios": "^0.21.1",
         "clsx": "^1.1.1",
+        "d3": "^7.0.0",
         "file-saver": "^2.0.5",
         "history": "^4.10.1",
         "i18next": "^19.8.4",

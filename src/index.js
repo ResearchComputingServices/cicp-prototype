@@ -1,4 +1,5 @@
 import React from 'react';
+import './index.css';
 import ReactDOM from 'react-dom';
 import { Provider as ReduxProvider } from 'react-redux';
 import { I18nextProvider } from 'react-i18next';

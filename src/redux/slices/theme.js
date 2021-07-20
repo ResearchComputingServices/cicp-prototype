@@ -3,7 +3,7 @@ import { clearSession } from '../actions';
 
 const initialState = {
     palette: {
-        type: window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light',
+        type: 'light',
         primary: {
             main: '#CF112D',
             contrastText: '#ffffff',

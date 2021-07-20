@@ -1,170 +1,88 @@
 import React from 'react';
-import clsx from 'clsx';
 import { Switch } from 'react-router-dom';
 import {
     AppBar,
     Toolbar,
     Box,
     Typography,
-    Link,
 } from '@material-ui/core';
+import { Search as SearchIcon } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core/styles';
-import {
-    Brightness2 as LightModeIcon,
-    Flare as DarkModeIcon,
-    LockOpen as ClearSessionIcon,
-    Search as SearchIcon,
-    MenuBook as MoreInformationIcon,
-} from '@material-ui/icons';
-import { useTranslation } from 'react-i18next';
-import jwt from 'jsonwebtoken';
+import twitterIcon from '../../assets/images/twitter.png';
+import facebookIcon from '../../assets/images/facebook.png';
 import Logo from '../Logo';
-import Confirmation from '../Confirmation';
-import {
-    useWindowSize,
-    useService,
-    useActions,
-    useStore,
-    useMount,
-} from '../../hooks';
+import { useService } from '../../hooks';
 import { routes } from '../../config';
-import UserMenu from './UserMenu';
 
 export const useStyles = makeStyles(theme => ({
     toolbar: {
         paddingLeft: 0,
-        paddingRight: 0,
-    },
-    appBar: {
-        marginLeft: theme.spacing(2),
-        width: '100%',
+        paddingRight: 20,
         display: 'flex',
+        flexDirection: 'row',
         justifyContent: 'space-between',
-        // Todo need to use appBar height from theme
-        height: 64,
-        alignItems: 'center',
+    },
+    appBar: { background: 'white' },
+    img: {
+        height: 40,
+        width: 40,
     },
     content: {
         transition: theme.transitions.create(['margin', 'width'], {
             easing: theme.transitions.easing.sharp,
             duration: theme.transitions.duration.leavingScreen,
         }),
-        // TODO need to use appBar height from themes.
-        paddingTop: 64,
+        paddingTop: 80,
+        width: '100%',
+        height: '100%',
+    },
+    searchIcon: {
+        color: '#4a4a4a',
+        height: 70,
+        width: 50,
+        marginLeft: theme.spacing(1),
     },
 }));
 
 function Main() {
     const classes = useStyles();
-    const dimensions = useWindowSize();
-    const [historyService, interceptorService, routesAssemblerService] = useService('history', 'interceptor', 'routesAssembler');
-    const userSessionActions = useActions('userSession');
-    const theme = useStore('theme');
-    const userSession = useStore('userSession');
-    const themeActions = useActions('theme');
-    const isDark = theme.palette.type === 'dark';
-    const [t] = useTranslation('common');
-    const storageService = useService('storage');
-    const sessionService = useService('session');
-    const [openConfirmation, setOpenConfirmation] = React.useState(false);
-
-    const switchThemeMode = () => themeActions.setMode(!isDark ? 'dark' : 'light');
-
-    const searchInEntrez = () => window.open('https://www.ncbi.nlm.nih.gov/sites/batchentrez', '_blank');
-
-    const moreInformation = () => historyService.go('/more-information');
-
-    const createSessionId = React.useCallback(() => {
-        const sessionId = storageService.getItem('userSession.sessionId');
-        if (sessionId) {
-            userSessionActions.login(sessionId);
-        } else {
-            const sessionId = jwt.sign({ createdDate: new Date().toISOString() }, 'srna');
-            userSessionActions.register(sessionId);
-        }
-    }, [storageService, userSessionActions]);
-
-    const clearSession = async () => {
-        userSessionActions.clearSession();
-        historyService.replace('/');
-        createSessionId();
-        try { await sessionService.clear(); } catch (err) {}
-    };
-
-    useMount(() => {
-        createSessionId();
-        interceptorService.registerDataTransformInterceptor();
-        interceptorService.registerUnhandledInterceptor(() => console.error('Server failed to send back a response or has crashed.'));
-    });
-
-    React.useEffect(() => {
-        if (userSession.sessionId) {
-            interceptorService.registerRequestInterceptor(request => (request.headers.Authorization = `Bearer ${userSession.sessionId}`));
-        }
-    }, [interceptorService, userSession]);
+    const routesAssemblerService = useService('routesAssembler');
 
     return (
         <>
-            <AppBar position='fixed'>
+            <AppBar
+                className={classes.appBar}
+                position='absolute'
+            >
                 <Toolbar className={classes.toolbar}>
                     <Logo />
-                    <Box className={classes.appBar}>
-                        <Typography
-                            className={
-                                clsx(
-                                    { [classes.hide]: dimensions.width < 690 },
-                                )
-                            }
-                            variant='h5'
-                        >
-                            <Link
-                                color='inherit'
-                                href='/'
-                                style={{ textDecoration: 'none' }}
-                            >
-                                {t('appBar.title')}
-                            </Link>
-                        </Typography>
-                        <UserMenu
-                            displayName={t('appBar.settings')}
-                            dropdowns={[
-                                {
-                                    title: t('appBar.searchInEntrez'),
-                                    Icon: <SearchIcon />,
-                                    handler: searchInEntrez,
-                                },
-                                {
-                                    title: t('appBar.moreInformation'),
-                                    Icon: <MoreInformationIcon />,
-                                    handler: moreInformation,
-                                },
-                                {
-                                    title: `${!isDark ? t('appBar.dark') : t('appBar.light')} ${t('appBar.theme')}`,
-                                    Icon: !isDark ? <LightModeIcon /> : <DarkModeIcon />,
-                                    handler: switchThemeMode,
-                                },
-                                {
-                                    title: t('appBar.clearSession'),
-                                    Icon: <ClearSessionIcon />,
-                                    handler: () => setOpenConfirmation(true),
-                                },
-                            ]}
+                    <Box
+                        alignItems='center'
+                        display='flex'
+                        flexDirection='row'
+                        justifyContent='center'
+                    >
+                        <img
+                            className={classes.img}
+                            src={twitterIcon}
                         />
+                        <img
+                            className={classes.img}
+                            src={facebookIcon}
+                        />
+                        <Box
+                            color='text.secondary'
+                            ml={1}
+                        >
+                            <Typography>EN/FR</Typography>
+                        </Box>
+                        <SearchIcon className={classes.searchIcon} />
                     </Box>
                 </Toolbar>
             </AppBar>
             <main className={classes.content}>
                 <Switch>{routesAssemblerService.assemble(routes)}</Switch>
             </main>
-            <Confirmation
-                content={t('appBar.sessionClearWarning')}
-                onClose={() => setOpenConfirmation(false)}
-                onConfirm={() => {
-                    clearSession();
-                    setOpenConfirmation(false);
-                }}
-                open={openConfirmation}
-            />
         </>
     );
 }
