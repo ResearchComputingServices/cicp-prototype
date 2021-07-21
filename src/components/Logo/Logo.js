@@ -6,7 +6,7 @@ import logo from '../../assets/images/carleton.svg';
 
 export const useStyles = makeStyles(theme => ({
     root: {
-        background: 'white',
+        background: theme.palette.background.default,
         padding: theme.spacing(1),
     },
 }));

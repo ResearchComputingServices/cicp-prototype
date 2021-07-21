@@ -4,6 +4,9 @@ import { clearSession } from '../actions';
 const initialState = {
     palette: {
         type: 'light',
+        typography: {
+            fontFamily: "'Helvetica', 'Arial', sans-serif",
+        },
         primary: {
             main: '#CF112D',
             contrastText: '#ffffff',
