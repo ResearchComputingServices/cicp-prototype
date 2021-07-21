@@ -1,4 +1,5 @@
 import React from 'react';
+import { Typography, Box } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 export const useStyles = makeStyles(theme => ({
@@ -6,9 +7,10 @@ export const useStyles = makeStyles(theme => ({
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        width: '80%',
+        width: '90%',
         paddingTop: theme.spacing(1),
-        textAlign: 'center'
+        textAlign: 'center',
+        marginBottom: theme.spacing(1)
     },
     segments: {
         display: 'flex',
@@ -30,7 +32,7 @@ export const useStyles = makeStyles(theme => ({
     highlight: { color: '#CF112D' },
     mutedText: { color: '#6c757d' },
     longParagraph: {
-        width: '60%',
+        width: '80%',
         paddingTop: theme.spacing(5)
     }
 }));
@@ -39,21 +41,11 @@ const SegmentA = () => {
     const classes = useStyles();
     return (
         <div className={classes.root}>
-            <h3>
-                Because we all have a right and responsibility to know, learn and grow.
-            </h3>
-            <p className={classes.mutedText}>
-                The Canadian charitable sector employs more than 10% of the country's fulltime
-                workforce and is estimated to contribute more than $151 billion dollars
-                annually to its GDP. Yet, up-to-date data on the sector is critically scarce.
-                This ambitious project will ensure that policymakers, practitioners,
-                researchers, and the general public have accurate, timely, and
-                comprehensive information about the charitable sector in Canada. Through
-                weekly surveys and reports, an online interactive information and training
-                hub, and monthly policy briefs, the Charity Insights Canada Project [CICP]
-                will offer an exhaustive overview of the trends, challenges, and
-                opportunities facing the Canadian charitable sector.
-            </p>
+            <Box mb={3}>
+                <Typography variant='h4'>
+                    Mission Statement
+                </Typography>
+            </Box>
             <h3>The <b>CICP</b> has <b>3 fundamental goals</b></h3>
             <div className={classes.segments}>
                 <div className={classes.segment}>

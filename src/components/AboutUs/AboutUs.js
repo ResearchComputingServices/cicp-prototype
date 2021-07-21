@@ -2,10 +2,12 @@ import React from 'react';
 import { Typography, Box } from '@material-ui/core';
 import Circle from '../Circle';
 import MissionStatement from '../MissionStatement'
+import Timeline from '../Timeline'
 import { makeStyles } from '@material-ui/core/styles';
 
 export const useStyles = makeStyles(theme => ({
-    root: {
+    root: {},
+    textBody: {
         display: 'flex',
         paddingBottom: theme.spacing(5),
         justifyContent: 'center',
@@ -13,7 +15,7 @@ export const useStyles = makeStyles(theme => ({
         alignItems: 'center',
     },
     title: {
-        marginTop: theme.spacing(2),
+        paddingTop: theme.spacing(2),
         marginLeft: theme.spacing(5) 
     },
     links: {
@@ -38,21 +40,22 @@ function AboutUs() {
         { name: 'Supporters' },
     ];
     return (
-        <>
+        <Box className={classes.root}>
             <Typography className={classes.title} variant='h4'>About Us</Typography>
-            <Box className={classes.root}>
+            <Box className={classes.textBody}>
                 <MissionStatement />
-                <Box pt={5} className={classes.links}>
+                <Timeline />
+                <Box pt={5} pb={3} className={classes.links}>
                     {links.map(
                         (link, i) => (
-                            <Circle key={i} color='white' background='black'>
+                            <Circle key={i}>
                                <Typography variant='h5'>{link.name}</Typography>
                             </Circle>
                         ),
                     )}
                 </Box>
             </Box>
-        </>
+        </Box>
     );
 }
 
