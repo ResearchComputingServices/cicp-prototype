@@ -1,14 +1,17 @@
 import React from 'react';
 import TitleBanner from '../TitleBanner';
+import { useService } from '../../hooks'
 import Divider from '../Divider';
 import { Typography, Box } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import Circle from '../Circle';
-import MissionStatement from '../MissionStatement';
-import Timeline from '../Timeline';
+import MissionStatement from './MissionStatement';
+import Timeline from './Timeline';
 
 export const useStyles = makeStyles(theme => ({
-    root: {},
+    root: {
+        height: '100%',
+    },
     textBody: {
         paddingTop: theme.spacing(5),
         display: 'flex',
@@ -36,10 +39,17 @@ export const useStyles = makeStyles(theme => ({
 }));
 
 function AboutUs() {
+    const historyService = useService('history');
     const classes = useStyles();
     const links = [
-        { name: 'Meet the Team' },
-        { name: 'Project Governance' },
+        {
+            name: 'Meet the Team',
+            onClick: () => historyService.go('/meet-the-team')
+        },
+        {
+            name: 'Project Governance',
+            onClick: () => historyService.go('/project-governance')
+        },
         { name: 'Supporters' },
     ];
     return (
@@ -58,7 +68,7 @@ function AboutUs() {
                 >
                     {links.map(
                         (link, i) => (
-                            <Circle key={i}>
+                            <Circle key={i} onClick={link.onClick}>
                                 <Typography variant='h5'>{link.name}</Typography>
                             </Circle>
                         ),

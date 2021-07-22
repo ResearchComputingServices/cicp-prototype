@@ -1,5 +1,6 @@
 import React from 'react';
 import { Typography, Box } from '@material-ui/core';
+import Underline from '../Underline';
 import { makeStyles } from '@material-ui/core/styles';
 
 export const useStyles = makeStyles(theme => ({
@@ -24,6 +25,12 @@ export const useStyles = makeStyles(theme => ({
         flexDirection: 'column',
         width: '300px',
     },
+    subTitle: {
+        display: 'flex',
+        justifyContent: 'center',
+        flexDirection: 'column',
+        alignItems: 'center',
+    },
     title: {
         display: 'flex',
         flexDirection: 'row',
@@ -41,13 +48,14 @@ export const useStyles = makeStyles(theme => ({
     },
 }));
 
-const SegmentB = () => {
+const Timeline = () => {
     const classes = useStyles();
     return (
         <div className={classes.root}>
             <Box pb={3}>
-                <Typography variant='h4'>
+                <Typography className={classes.subTitle} variant='h4'>
                     Project Timeline
+                    <Underline />
                 </Typography>
             </Box>
             <div className={classes.segments}>
@@ -106,4 +114,4 @@ const SegmentB = () => {
     );
 };
 
-export default SegmentB;
+export default Timeline;

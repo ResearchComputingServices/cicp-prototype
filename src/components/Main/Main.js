@@ -32,12 +32,12 @@ export const useStyles = makeStyles(theme => ({
         height: 40,
         width: 40,
     },
-    content: {
+    main: {
         transition: theme.transitions.create(['margin', 'width'], {
             easing: theme.transitions.easing.sharp,
             duration: theme.transitions.duration.leavingScreen,
         }),
-        paddingTop: 80,
+        marginTop: 80,
         width: '100%',
         height: '100%',
     },
@@ -134,14 +134,15 @@ function Main() {
                     </Box>
                 </Toolbar>
             </AppBar>
-            <main className={classes.content}>
+            <main className={classes.main}>
                 <AppBar
                     className={classes.navBar}
                     position='relative'
                 >
                     <Box className={classes.tabs}>
                         <Tab
-                            className={clsx({ [classes.selected]: historyService.getUrl() === '/about-us' })}
+                            className={clsx({ [classes.selected]: historyService.getUrl() === '/about-us'
+                                || historyService.getUrl() === '/meet-the-team' })}
                             label='About us'
                             onClick={() => historyService.go('/about-us')}
                         />

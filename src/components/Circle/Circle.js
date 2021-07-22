@@ -23,15 +23,19 @@ export const useStyles = makeStyles(theme => ({
             width: 180,
             height: 150,
         },
+        '&:hover': {
+            transform: 'scale(1.02)'
+        },
     },
 }));
 
-function Circle({ children }) {
+function Circle({ children, onClick }) {
     const classes = useStyles();
     return (
         <Card
             className={classes.circle}
             elevation={7}
+            onClick={onClick}
         >
             {children}
         </Card>

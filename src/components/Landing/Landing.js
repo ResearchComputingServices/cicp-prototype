@@ -1,18 +1,18 @@
 import React from 'react';
-import { Typography } from '@material-ui/core';
+import { Box, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import carletonBackground from '../../assets/images/carleton-background.jpeg';
-import Layout from '../Layout';
 import Circle from '../Circle';
 import Banner from '../Banner';
 
 export const useStyles = makeStyles(() => ({
-    layout: {
+    root: {
         background: `url(${carletonBackground})`,
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
-        height: 790,
         marginTop: -5,
+        height: '80vh',
+        height: 790,
     },
     links: {
         display: 'flex',
@@ -36,7 +36,7 @@ function Landing() {
         { name: 'Reports & Events' },
     ];
     return (
-        <Layout className={classes.layout}>
+        <Box className={classes.root}>
             <Banner />
             <div className={classes.links}>
                 {links.map(
@@ -47,7 +47,7 @@ function Landing() {
                     ),
                 )}
             </div>
-        </Layout>
+        </Box>
     );
 }
 

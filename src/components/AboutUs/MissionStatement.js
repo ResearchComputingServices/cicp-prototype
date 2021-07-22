@@ -1,6 +1,7 @@
 import React from 'react';
 import { Typography, Box } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+import Underline from '../Underline';
 
 export const useStyles = makeStyles(theme => ({
     root: {
@@ -23,6 +24,12 @@ export const useStyles = makeStyles(theme => ({
         flexDirection: 'column',
         width: '300px',
     },
+    subTitle: {
+        display: 'flex',
+        justifyContent: 'center',
+        flexDirection: 'column',
+        alignItems: 'center',
+    },
     segmentTitle: {
         display: 'flex',
         flexDirection: 'row',
@@ -44,13 +51,14 @@ export const useStyles = makeStyles(theme => ({
     },
 }));
 
-const SegmentA = () => {
+const MissionStatement = () => {
     const classes = useStyles();
     return (
         <div className={classes.root}>
             <Box mb={3}>
-                <Typography variant='h4'>
+                <Typography className={classes.subTitle} variant='h4'>
                     Mission Statement
+                    <Underline />
                 </Typography>
             </Box>
             <h3>{'The '}<b>CICP</b>{' has '}<b>{'3 fundamental goals'}</b></h3>
@@ -99,4 +107,4 @@ const SegmentA = () => {
     );
 };
 
-export default SegmentA;
+export default MissionStatement;
