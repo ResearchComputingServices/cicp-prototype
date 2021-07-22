@@ -6,9 +6,8 @@ export const useStyles = makeStyles(theme => ({
     circle: {
         width: 270,
         height: 270,
-        background: theme.palette.background.default,
-        color: 'black',
-        border: `0.1px solid ${theme.palette.primary.main}`,
+        background: theme.palette.primary.main,
+        color: 'white',
         textAlign: 'center',
         display: 'flex',
         flexDirection: 'column',
@@ -27,13 +26,12 @@ export const useStyles = makeStyles(theme => ({
     },
 }));
 
-function Circle({ children, background, color }) {
+function Circle({ children }) {
     const classes = useStyles();
     return (
         <Card
-            style={{ background, color }}
             className={classes.circle}
-            elevation={5}
+            elevation={7}
         >
             {children}
         </Card>

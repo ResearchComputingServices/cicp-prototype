@@ -10,14 +10,14 @@ export const useStyles = makeStyles(theme => ({
         width: '90%',
         paddingTop: theme.spacing(5),
         textAlign: 'center',
-        marginBottom: theme.spacing(1)
+        marginBottom: theme.spacing(1),
     },
     segments: {
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-around',
         width: '100%',
-        marginTop: theme.spacing(2)
+        marginTop: theme.spacing(2),
     },
     segment: {
         display: 'flex',
@@ -28,10 +28,17 @@ export const useStyles = makeStyles(theme => ({
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'center',
-        width: '100%'
+        width: '100%',
     },
     highlight: { color: '#CF112D' },
-    mutedText: { color: '#6c757d' }
+    mutedText: {
+        color: '#6c757d',
+        '&:hover': {
+            color: '#424242',
+            fontWeight: 600
+        },
+        cursor: 'pointer'
+    },
 }));
 
 const SegmentB = () => {
@@ -89,7 +96,9 @@ const SegmentB = () => {
                         <h3>Phase:6</h3>
                     </div>
                     <p className={classes.mutedText}>
-                        Recommendation for the longterm sustainability of <span className={classes.highlight}>CICP</span>
+                        Recommendation for the longterm sustainability of
+                        {' '}
+                        <span className={classes.highlight}>CICP</span>
                     </p>
                 </div>
             </div>

@@ -10,13 +10,13 @@ export const useStyles = makeStyles(theme => ({
         width: '90%',
         paddingTop: theme.spacing(1),
         textAlign: 'center',
-        marginBottom: theme.spacing(1)
+        marginBottom: theme.spacing(1),
     },
     segments: {
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-around',
-        width: '100%'
+        width: '100%',
     },
     segment: {
         display: 'flex',
@@ -27,14 +27,21 @@ export const useStyles = makeStyles(theme => ({
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'center',
-        width: '100%'
+        width: '100%',
     },
     highlight: { color: '#CF112D' },
-    mutedText: { color: '#6c757d' },
+    mutedText: {
+        color: '#6c757d',
+        '&:hover': {
+            color: '#424242',
+            fontWeight: 600
+        },
+        cursor: 'pointer'
+    },
     longParagraph: {
         width: '80%',
-        paddingTop: theme.spacing(5)
-    }
+        paddingTop: theme.spacing(5),
+    },
 }));
 
 const SegmentA = () => {
@@ -46,11 +53,13 @@ const SegmentA = () => {
                     Mission Statement
                 </Typography>
             </Box>
-            <h3>The <b>CICP</b> has <b>3 fundamental goals</b></h3>
+            <h3>{'The '}<b>CICP</b>{' has '}<b>{'3 fundamental goals'}</b></h3>
             <div className={classes.segments}>
                 <div className={classes.segment}>
                     <div className={classes.segmentTitle}>
-                        <h3 className={classes.highlight}>(1)&nbsp;</h3><h3>To</h3><h3 className={classes.highlight}>&nbsp;inform</h3>
+                        <h3 className={classes.highlight}>(1)&nbsp;</h3>
+                        <h3>To</h3>
+                        <h3 className={classes.highlight}>&nbsp;inform</h3>
                     </div>
                     <p className={classes.mutedText}>
                         the sectors' stakeholders and
@@ -62,7 +71,9 @@ const SegmentA = () => {
                 </div>
                 <div className={classes.segment}>
                     <div className={classes.segmentTitle}>
-                        <h3 className={classes.highlight}>(2)&nbsp;</h3><h3>To</h3><h3 className={classes.highlight}>&nbsp;Build</h3>
+                        <h3 className={classes.highlight}>(2)&nbsp;</h3>
+                        <h3>To</h3>
+                        <h3 className={classes.highlight}>&nbsp;Build</h3>
                     </div>
                     <p className={classes.mutedText}>
                         a lasting and flexible
@@ -73,7 +84,9 @@ const SegmentA = () => {
                 </div>
                 <div className={classes.segment}>
                     <div className={classes.segmentTitle}>
-                        <h3 className={classes.highlight}>(3)&nbsp;</h3><h3>To</h3><h3 className={classes.highlight}>&nbsp;advocate</h3>
+                        <h3 className={classes.highlight}>(3)&nbsp;</h3>
+                        <h3>To</h3>
+                        <h3 className={classes.highlight}>&nbsp;advocate</h3>
                     </div>
                     <p className={classes.mutedText}>
                         for evidence-based
@@ -82,15 +95,6 @@ const SegmentA = () => {
                     </p>
                 </div>
             </div>
-            <p className={classes.longParagraph}>
-                We propose a systems-oriented and
-                purposeful approach to close the
-                information gap about registered charities
-                in Canada through regular surveys,
-                charitable data aggregation and
-                repository, and capacity-building to
-                promote free and accessible data.
-            </p>
         </div>
     );
 };

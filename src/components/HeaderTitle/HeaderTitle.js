@@ -15,7 +15,7 @@ export const useStyles = makeStyles(theme => ({
     },
     higlightedWord: {
         color: theme.palette.primary.main,
-        marginRight: theme.spacing(0.5)
+        marginRight: theme.spacing(0.5),
     },
     title: {
         display: 'flex',
@@ -28,7 +28,14 @@ export const useStyles = makeStyles(theme => ({
 
 const HighlightedChar = ({ children }) => {
     const classes = useStyles();
-    return <Typography variant='h4' className={classes.higlightedWord}>{children}</Typography>;
+    return (
+        <Typography
+            className={classes.higlightedWord}
+            variant='h4'
+        >
+            {children}
+        </Typography>
+    );
 };
 
 const HeaderTitle = () => {

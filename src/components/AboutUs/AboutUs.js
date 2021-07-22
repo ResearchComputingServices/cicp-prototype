@@ -1,22 +1,25 @@
 import React from 'react';
+import TitleBanner from '../TitleBanner';
+import Divider from '../Divider';
 import { Typography, Box } from '@material-ui/core';
-import Circle from '../Circle';
-import MissionStatement from '../MissionStatement'
-import Timeline from '../Timeline'
 import { makeStyles } from '@material-ui/core/styles';
+import Circle from '../Circle';
+import MissionStatement from '../MissionStatement';
+import Timeline from '../Timeline';
 
 export const useStyles = makeStyles(theme => ({
     root: {},
     textBody: {
+        paddingTop: theme.spacing(5),
         display: 'flex',
         paddingBottom: theme.spacing(5),
         justifyContent: 'center',
         flexDirection: 'column',
         alignItems: 'center',
     },
-    title: {
-        paddingTop: theme.spacing(2),
-        marginLeft: theme.spacing(5) 
+    titleText: {
+        color: theme.palette.background.default,
+        fontWeight: 900,
     },
     links: {
         display: 'flex',
@@ -41,15 +44,22 @@ function AboutUs() {
     ];
     return (
         <Box className={classes.root}>
-            <Typography className={classes.title} variant='h4'>About Us</Typography>
+            <TitleBanner className={classes.title}>
+                <Typography className={classes.titleText} variant='h3'>About Us</Typography>
+            </TitleBanner>
+            <Divider/>
             <Box className={classes.textBody}>
                 <MissionStatement />
                 <Timeline />
-                <Box pt={5} pb={3} className={classes.links}>
+                <Box
+                    className={classes.links}
+                    pb={3}
+                    pt={5}
+                >
                     {links.map(
                         (link, i) => (
                             <Circle key={i}>
-                               <Typography variant='h5'>{link.name}</Typography>
+                                <Typography variant='h5'>{link.name}</Typography>
                             </Circle>
                         ),
                     )}

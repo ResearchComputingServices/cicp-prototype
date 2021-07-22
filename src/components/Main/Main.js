@@ -8,6 +8,7 @@ import {
     Typography,
     Tab,
 } from '@material-ui/core';
+import Divider from '../Divider';
 import { Search as SearchIcon } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core/styles';
 import twitterIcon from '../../assets/images/twitter.png';
@@ -24,7 +25,7 @@ export const useStyles = makeStyles(theme => ({
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-between',
-        textAlign: 'center'
+        textAlign: 'center',
     },
     appBar: { background: theme.palette.background.default },
     img: {
@@ -61,7 +62,7 @@ export const useStyles = makeStyles(theme => ({
     },
     selected: {
         color: '#8c0a1e',
-        fontWeight: 600
+        fontWeight: 600,
     },
     tabs: {
         display: 'flex',
@@ -75,7 +76,7 @@ export const useStyles = makeStyles(theme => ({
         borderStyle: 'solid solid solid solid',
         borderWidth: '0px 0px 1px 0px',
         marginTop: -10,
-        boxShadow: 'none'
+        boxShadow: 'none',
     },
 }));
 
@@ -85,7 +86,7 @@ function Main() {
     const historyService = useService('history');
     const [isRoot, setIsRoot] = React.useState(historyService.getUrl() === '/');
     const history = useHistory();
-    const dimensions = useWindowSize()
+    const dimensions = useWindowSize();
 
     React.useEffect(() => history.listen(location => {
         const current_url = location.pathname;
@@ -107,7 +108,7 @@ function Main() {
                         <Logo />
                     </a>
                     {!isRoot && dimensions.width > 1000 && (
-                        <HeaderTitle/>
+                        <HeaderTitle />
                     )}
                     <Box
                         alignItems='center'
@@ -140,9 +141,7 @@ function Main() {
                 >
                     <Box className={classes.tabs}>
                         <Tab
-                            className={clsx({
-                                [classes.selected]: historyService.getUrl() === '/about-us'
-                            })}
+                            className={clsx({ [classes.selected]: historyService.getUrl() === '/about-us' })}
                             label='About us'
                             onClick={() => historyService.go('/about-us')}
                         />
@@ -150,11 +149,7 @@ function Main() {
                     </Box>
                 </AppBar>
                 <Switch>{routesAssemblerService.assemble(routes)}</Switch>
-                <AppBar
-                    color='primary'
-                    position='relative'
-                    style={{ height: 5 }}
-                />
+                <Divider/>
                 <Box m={2}>
                     <Typography variant='h6'>Supported By</Typography>
                 </Box>

@@ -42,7 +42,7 @@ function Landing() {
                 {links.map(
                     (link, i) => (
                         <Circle key={i}>
-                           <Typography variant='h5'>{link.name}</Typography>
+                            <Typography variant='h5'>{link.name}</Typography>
                         </Circle>
                     ),
                 )}
