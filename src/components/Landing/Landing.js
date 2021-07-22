@@ -2,6 +2,7 @@ import React from 'react';
 import { Box, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import carletonBackground from '../../assets/images/carleton-background.jpeg';
+import { useService } from '../../hooks'
 import Circle from '../Circle';
 import Banner from '../Banner';
 
@@ -12,7 +13,7 @@ export const useStyles = makeStyles(() => ({
         backgroundSize: 'cover',
         marginTop: -5,
         height: '80vh',
-        height: 790,
+        minHeight: 850
     },
     links: {
         display: 'flex',
@@ -20,6 +21,7 @@ export const useStyles = makeStyles(() => ({
         justifyContent: 'space-around',
         height: '300px',
         width: '100%',
+        flexWrap: 'wrap',
         '& img': {
             height: 150,
             width: 150,
@@ -30,23 +32,30 @@ export const useStyles = makeStyles(() => ({
 
 function Landing() {
     const classes = useStyles();
+    const historyService = useService('history');
     const links = [
-        { name: 'Research & Data' },
-        { name: 'Analysing & Learning' },
+        {
+            name: 'Research & Data',
+            onClick: () => historyService.go('research-and-data')
+        },
+        {
+            name: 'Analysing & Learning',
+            onClick: () => historyService.go('analyzing-and-learning')
+        },
         { name: 'Reports & Events' },
     ];
     return (
         <Box className={classes.root}>
             <Banner />
-            <div className={classes.links}>
+            <Box className={classes.links}>
                 {links.map(
                     (link, i) => (
-                        <Circle key={i}>
+                        <Circle key={i} onClick={link.onClick}>
                             <Typography variant='h5'>{link.name}</Typography>
                         </Circle>
                     ),
                 )}
-            </div>
+            </Box>
         </Box>
     );
 }

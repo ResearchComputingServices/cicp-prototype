@@ -3,6 +3,8 @@ import Landing from '../components/Landing';
 import AboutUs from '../components/AboutUs';
 import MeetTheTeam from '../components/MeetTheTeam';
 import ProjectGovernance from '../components/ProjectGovernance';
+import ResearchAndData from '../components/ResearchAndData';
+import AnalyzingAndLearning from '../components/AnalyzingAndLearning'
 import NotFound from '../components/NotFound';
 
 export default [
@@ -21,6 +23,14 @@ export default [
     {
         path: '/project-governance',
         component: () => <ProjectGovernance />,
+    },
+    {
+        path: '/research-and-data',
+        component: () => <ResearchAndData />,
+    },
+    {
+        path: '/analyzing-and-learning',
+        component: () => <AnalyzingAndLearning />,
     },
     {
         path: '*',

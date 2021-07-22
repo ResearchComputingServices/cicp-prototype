@@ -38,8 +38,6 @@ export const useStyles = makeStyles(theme => ({
             duration: theme.transitions.duration.leavingScreen,
         }),
         marginTop: 80,
-        width: '100%',
-        height: '100%',
     },
     searchIcon: {
         color: '#4a4a4a',
@@ -151,13 +149,13 @@ function Main() {
                 </AppBar>
                 <Switch>{routesAssemblerService.assemble(routes)}</Switch>
                 <Divider/>
-                <Box m={2}>
-                    <Typography variant='h6'>Supported By</Typography>
-                </Box>
-                <Box m={2}>
-                    <Typography variant='h6'>[Name of Sponsor]</Typography>
-                </Box>
             </main>
+            <Box m={2}>
+                <Typography variant='h6'>Supported By</Typography>
+            </Box>
+            <Box m={2}>
+                <Typography variant='h6'>[Name of Sponsor]</Typography>
+            </Box>
         </>
     );
 }

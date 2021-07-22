@@ -20,7 +20,10 @@ class HistoryService {
 
     getUrlFragments = () => _.compact(this.getUrl().split('/'));
 
-    go = route => this.history.push(route);
+    go = route => {
+        this.history.push(route);
+        window.scrollTo(0, 0)
+    }
 
     replace = route => this.history.replace(route);
 

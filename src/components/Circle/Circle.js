@@ -21,7 +21,7 @@ export const useStyles = makeStyles(theme => ({
         },
         '@media (max-width:510px)': {
             width: 180,
-            height: 150,
+            height: 180,
         },
         '&:hover': {
             transform: 'scale(1.02)'

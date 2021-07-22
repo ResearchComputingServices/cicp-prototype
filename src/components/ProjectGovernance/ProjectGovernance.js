@@ -9,15 +9,7 @@ import { makeStyles } from '@material-ui/core/styles';
 export const useStyles = makeStyles(theme => ({
     root: {
         height: '80vh',
-        height: 790,
-    },
-    body: {
-        paddingTop: theme.spacing(5),
-        display: 'flex',
-        paddingBottom: theme.spacing(5),
-        flexDirection: 'column',
-        alignItems: 'center',
-        height: '100%'
+        minHeight: 800
     },
     titleText: {
         color: theme.palette.background.default,
@@ -29,12 +21,18 @@ export const useStyles = makeStyles(theme => ({
         justifyContent: 'center',
         alignItems: 'center',
     },
+    body: {
+        paddingTop: theme.spacing(5),
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+    },
     contents: {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        marginTop: theme.spacing(8)
+        height: 400
     }
 }));
 

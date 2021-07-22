@@ -17,6 +17,7 @@ export const useStyles = makeStyles(theme => ({
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-around',
+        flexWrap: 'wrap',
         width: '100%',
         marginTop: theme.spacing(2),
     },

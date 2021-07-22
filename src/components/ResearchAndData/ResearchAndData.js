@@ -1,22 +1,21 @@
 import React from 'react';
 import TitleBanner from '../TitleBanner';
-import { useService } from '../../hooks'
 import Divider from '../Divider';
+import Circle from '../Circle';
 import { Typography, Box } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import Circle from '../Circle';
-import MissionStatement from './MissionStatement';
-import Timeline from './Timeline';
 
 export const useStyles = makeStyles(theme => ({
-    root: {},
-    body: {
-        paddingTop: theme.spacing(5),
+    root: {
+        height: '80vh',
+        minHeight: 800
+    },
+    contents: {
         display: 'flex',
-        paddingBottom: theme.spacing(8),
-        justifyContent: 'center',
         flexDirection: 'column',
+        justifyContent: 'center',
         alignItems: 'center',
+        height: 600,
     },
     titleText: {
         color: theme.palette.background.default,
@@ -26,8 +25,10 @@ export const useStyles = makeStyles(theme => ({
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-around',
+        flexWrap: 'wrap',
+        height: '300px',
         width: '100%',
-        margin: theme.spacing(5),
+        flexWrap: 'wrap',
         '& img': {
             height: 150,
             width: 150,
@@ -36,34 +37,21 @@ export const useStyles = makeStyles(theme => ({
     },
 }));
 
-function AboutUs() {
-    const historyService = useService('history');
+function ResearchAndData() {
     const classes = useStyles();
     const links = [
-        {
-            name: 'Meet the Team',
-            onClick: () => historyService.go('/meet-the-team')
-        },
-        {
-            name: 'Project Governance',
-            onClick: () => historyService.go('/project-governance')
-        },
-        { name: 'Supporters' },
+        { name: 'Download Data' },
+        { name: 'Research Notes & Papers' },
+        { name: 'Feedback & Consultations' },
     ];
     return (
         <Box className={classes.root}>
-            <TitleBanner className={classes.title}>
-                <Typography className={classes.titleText} variant='h3'>About Us</Typography>
+            <TitleBanner>
+                <Typography className={classes.titleText} variant='h3'>Research & Data</Typography>
             </TitleBanner>
             <Divider/>
-            <Box className={classes.body}>
-                <MissionStatement />
-                <Timeline />
-                <Box
-                    className={classes.links}
-                    pb={3}
-                    pt={5}
-                >
+            <Box className={classes.contents}>
+                <Box className={classes.links}>
                     {links.map(
                         (link, i) => (
                             <Circle key={i} onClick={link.onClick}>
@@ -77,4 +65,4 @@ function AboutUs() {
     );
 }
 
-export default AboutUs;
+export default ResearchAndData;
