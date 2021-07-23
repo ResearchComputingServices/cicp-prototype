@@ -82,7 +82,7 @@ function Main() {
     const classes = useStyles();
     const routesAssemblerService = useService('routesAssembler');
     const historyService = useService('history');
-    const [isRoot, setIsRoot] = React.useState(historyService.getUrl().includes('/cicp-prototype'));
+    const [isRoot, setIsRoot] = React.useState(historyService.getUrl() === ('/cicp-prototype') || historyService.getUrl() === '/');
     const history = useHistory();
     const dimensions = useWindowSize();
 
