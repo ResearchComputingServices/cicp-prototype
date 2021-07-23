@@ -82,7 +82,7 @@ function Main() {
     const classes = useStyles();
     const routesAssemblerService = useService('routesAssembler');
     const historyService = useService('history');
-    const [isRoot, setIsRoot] = React.useState(historyService.getUrl() === '/' || historyService.getUrl() === '/cicp-prototype');
+    const [isRoot, setIsRoot] = React.useState(historyService.getUrl().includes('/cicp-prototype'));
     const history = useHistory();
     const dimensions = useWindowSize();
 
@@ -139,9 +139,9 @@ function Main() {
                 >
                     <Box className={classes.tabs}>
                         <Tab
-                            className={clsx({ [classes.selected]: historyService.getUrl() === '/cicp-prototype/about-us'
-                                || historyService.getUrl() === '/cicp-prototype/meet-the-team'
-                                || historyService.getUrl() === '/cicp-prototype/project-governance'})}
+                            className={clsx({ [classes.selected]: historyService.getUrl().includes('/cicp-prototype/about-us')
+                                || historyService.getUrl().includes('/cicp-prototype/meet-the-team')
+                                || historyService.getUrl().includes('/cicp-prototype/project-governance')})}
                             label='About us'
                             onClick={() => historyService.go('/cicp-prototype/about-us')}
                         />
