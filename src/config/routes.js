@@ -5,6 +5,7 @@ import MeetTheTeam from '../components/MeetTheTeam';
 import ProjectGovernance from '../components/ProjectGovernance';
 import ResearchAndData from '../components/ResearchAndData';
 import AnalyzingAndLearning from '../components/AnalyzingAndLearning'
+import LearnToInterpretData from '../components/LearnToInterpretData'
 import NotFound from '../components/NotFound';
 
 export default [
@@ -31,6 +32,10 @@ export default [
     {
         path: '/analyzing-and-learning',
         component: () => <AnalyzingAndLearning />,
+    },
+    {
+        path: '/learn-to-interpret-data',
+        component: () => <LearnToInterpretData />,
     },
     {
         path: '*',

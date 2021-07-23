@@ -1,4 +1,5 @@
 import React from 'react';
+import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import { Typography, Box } from '@material-ui/core';
 import Underline from '../Underline';
 import { makeStyles } from '@material-ui/core/styles';
@@ -24,7 +25,7 @@ export const useStyles = makeStyles(theme => ({
     segment: {
         display: 'flex',
         flexDirection: 'column',
-        width: '300px',
+        width: 150,
     },
     subTitle: {
         display: 'flex',
@@ -36,14 +37,15 @@ export const useStyles = makeStyles(theme => ({
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'center',
-        width: '100%',
+        alignItems: 'center',
     },
-    highlight: { color: '#CF112D' },
+
+    highlight: { color: theme.palette.primary.main },
     mutedText: {
         color: '#6c757d',
         '&:hover': {
             color: '#424242',
-            fontWeight: 600
+            fontWeight: 550
         },
         cursor: 'pointer'
     },
@@ -62,12 +64,13 @@ const Timeline = () => {
             <div className={classes.segments}>
                 <div className={classes.segment}>
                     <div className={classes.title}>
-                        <h3>Phase:1</h3>
+                        <h3>Phase:1</h3> 
                     </div>
                     <p className={classes.mutedText}>
                         Recruitment of panel & building project's infrastructure
                     </p>
                 </div>
+                <Box mt={3}><ArrowForwardIosIcon color='primary'/></Box>
                 <div className={classes.segment}>
                     <div className={classes.title}>
                         <h3>Phase:2</h3>
@@ -76,6 +79,7 @@ const Timeline = () => {
                         Pilot testing
                     </p>
                 </div>
+                <Box mt={3}><ArrowForwardIosIcon color='primary'/></Box>
                 <div className={classes.segment}>
                     <div className={classes.title}>
                         <h3>Phase:3</h3>
@@ -84,6 +88,7 @@ const Timeline = () => {
                         Launch
                     </p>
                 </div>
+                <Box mt={3}><ArrowForwardIosIcon color='primary'/></Box>
                 <div className={classes.segment}>
                     <div className={classes.title}>
                         <h3>Phase:4</h3>
@@ -92,6 +97,7 @@ const Timeline = () => {
                         Collection, analysis & reporting
                     </p>
                 </div>
+                <Box mt={3}><ArrowForwardIosIcon color='primary'/></Box>
                 <div className={classes.segment}>
                     <div className={classes.title}>
                         <h3>Phase:5</h3>
@@ -100,6 +106,7 @@ const Timeline = () => {
                         Accountability & Evaluation
                     </p>
                 </div>
+                <Box mt={3}><ArrowForwardIosIcon color='primary'/></Box>
                 <div className={classes.segment}>
                     <div className={classes.title}>
                         <h3>Phase:6</h3>

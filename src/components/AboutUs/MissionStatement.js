@@ -41,7 +41,7 @@ export const useStyles = makeStyles(theme => ({
         color: '#6c757d',
         '&:hover': {
             color: '#424242',
-            fontWeight: 600
+            fontWeight: 550
         },
         cursor: 'pointer'
     },

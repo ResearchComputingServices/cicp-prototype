@@ -140,7 +140,8 @@ function Main() {
                     <Box className={classes.tabs}>
                         <Tab
                             className={clsx({ [classes.selected]: historyService.getUrl() === '/about-us'
-                                || historyService.getUrl() === '/meet-the-team' })}
+                                || historyService.getUrl() === '/meet-the-team'
+                                || historyService.getUrl() === '/project-governance'})}
                             label='About us'
                             onClick={() => historyService.go('/about-us')}
                         />

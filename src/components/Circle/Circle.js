@@ -1,4 +1,5 @@
 import React from 'react';
+import clsx from 'clsx';
 import { Card } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -29,11 +30,11 @@ export const useStyles = makeStyles(theme => ({
     },
 }));
 
-function Circle({ children, onClick }) {
+function Circle({ children, onClick, className }) {
     const classes = useStyles();
     return (
         <Card
-            className={classes.circle}
+            className={clsx(classes.circle, className)}
             elevation={7}
             onClick={onClick}
         >
