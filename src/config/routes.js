@@ -14,31 +14,27 @@ export default [
         component: () => <Landing />,
     },
     {
-        path: '/cicp-prototype',
-        component: () => <Landing />,
-    },
-    {
-        path: '/cicp-prototype/about-us',
+        path: '/about-us',
         component: () => <AboutUs />,
     },
     {
-        path: '/cicp-prototype/meet-the-team',
+        path: '/meet-the-team',
         component: () => <MeetTheTeam />,
     },
     {
-        path: '/cicp-prototype/project-governance',
+        path: '/project-governance',
         component: () => <ProjectGovernance />,
     },
     {
-        path: '/cicp-prototype/research-and-data',
+        path: '/research-and-data',
         component: () => <ResearchAndData />,
     },
     {
-        path: '/cicp-prototype/analyzing-and-learning',
+        path: '/analyzing-and-learning',
         component: () => <AnalyzingAndLearning />,
     },
     {
-        path: '/cicp-prototype/learn-to-interpret-data',
+        path: '/learn-to-interpret-data',
         component: () => <LearnToInterpretData />,
     },
     {

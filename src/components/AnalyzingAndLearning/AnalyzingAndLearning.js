@@ -44,7 +44,7 @@ function AnalyzingAndLearning() {
         { name: 'What is the data telling us?' },
         {
             name: 'Learning to Interpret the Data',
-            onClick: () => historyService.go('/cicp-prototype/learn-to-interpret-data')
+            onClick: () => historyService.go('/learn-to-interpret-data')
         },
     ];
     return (

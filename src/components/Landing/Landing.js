@@ -36,11 +36,11 @@ function Landing() {
     const links = [
         {
             name: 'Research & Data',
-            onClick: () => historyService.go('/cicp-prototype/research-and-data')
+            onClick: () => historyService.go('/research-and-data')
         },
         {
             name: 'Analysing & Learning',
-            onClick: () => historyService.go('/cicp-prototype/analyzing-and-learning')
+            onClick: () => historyService.go('/analyzing-and-learning')
         },
         { name: 'Reports & Events' },
     ];

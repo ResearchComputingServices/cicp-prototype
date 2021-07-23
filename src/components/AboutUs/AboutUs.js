@@ -42,11 +42,11 @@ function AboutUs() {
     const links = [
         {
             name: 'Meet the Team',
-            onClick: () => historyService.go('/cicp-prototype/meet-the-team')
+            onClick: () => historyService.go('/meet-the-team')
         },
         {
             name: 'Project Governance',
-            onClick: () => historyService.go('/cicp-prototype/project-governance')
+            onClick: () => historyService.go('/project-governance')
         },
         { name: 'Supporters' },
     ];

@@ -82,17 +82,13 @@ function Main() {
     const classes = useStyles();
     const routesAssemblerService = useService('routesAssembler');
     const historyService = useService('history');
-    const [isRoot, setIsRoot] = React.useState(historyService.getUrl() === ('/cicp-prototype') || historyService.getUrl() === '/');
+    const [currUrl, setCurrUrl] = React.useState(historyService.getUrl())
     const history = useHistory();
     const dimensions = useWindowSize();
 
     React.useEffect(() => history.listen(location => {
         const current_url = location.pathname;
-        if ((current_url === '/' || current_url === '/cicp-prototype') && !isRoot) {
-            setIsRoot(true);
-        } else {
-            setIsRoot(false);
-        }
+        setCurrUrl(current_url)
     }), [history]);
 
     return (
@@ -102,10 +98,10 @@ function Main() {
                 position='absolute'
             >
                 <Toolbar className={classes.toolbar}>
-                    <a href='/cicp-prototype'>
+                    <a href='/'>
                         <Logo />
                     </a>
-                    {!isRoot && dimensions.width > 1000 && (
+                    {!(currUrl === '/') && dimensions.width > 1000 && (
                         <HeaderTitle />
                     )}
                     <Box
@@ -139,11 +135,11 @@ function Main() {
                 >
                     <Box className={classes.tabs}>
                         <Tab
-                            className={clsx({ [classes.selected]: historyService.getUrl().includes('/cicp-prototype/about-us')
-                                || historyService.getUrl().includes('/cicp-prototype/meet-the-team')
-                                || historyService.getUrl().includes('/cicp-prototype/project-governance')})}
+                            className={clsx({ [classes.selected]: currUrl.includes('/about-us')
+                                || currUrl.includes('/meet-the-team')
+                                || currUrl.includes('/project-governance')})}
                             label='About us'
-                            onClick={() => historyService.go('/cicp-prototype/about-us')}
+                            onClick={() => historyService.go('/about-us')}
                         />
                         <Tab label='Contact' />
                     </Box>
