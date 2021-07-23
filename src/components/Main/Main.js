@@ -82,13 +82,13 @@ function Main() {
     const classes = useStyles();
     const routesAssemblerService = useService('routesAssembler');
     const historyService = useService('history');
-    const [isRoot, setIsRoot] = React.useState(historyService.getUrl() === '/');
+    const [isRoot, setIsRoot] = React.useState(historyService.getUrl() === '/' || historyService.getUrl() === '/cicp-prototype');
     const history = useHistory();
     const dimensions = useWindowSize();
 
     React.useEffect(() => history.listen(location => {
         const current_url = location.pathname;
-        if (current_url === '/' && !isRoot) {
+        if ((current_url === '/' || current_url === '/cicp-prototype') && !isRoot) {
             setIsRoot(true);
         } else {
             setIsRoot(false);
@@ -139,11 +139,11 @@ function Main() {
                 >
                     <Box className={classes.tabs}>
                         <Tab
-                            className={clsx({ [classes.selected]: historyService.getUrl() === '/about-us'
-                                || historyService.getUrl() === '/meet-the-team'
-                                || historyService.getUrl() === '/project-governance'})}
+                            className={clsx({ [classes.selected]: historyService.getUrl() === '/cicp-prototype/about-us'
+                                || historyService.getUrl() === '/cicp-prototype/meet-the-team'
+                                || historyService.getUrl() === '/cicp-prototype/project-governance'})}
                             label='About us'
-                            onClick={() => historyService.go('/about-us')}
+                            onClick={() => historyService.go('/cicp-prototype/about-us')}
                         />
                         <Tab label='Contact' />
                     </Box>
