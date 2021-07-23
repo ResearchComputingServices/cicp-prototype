@@ -1,10 +1,10 @@
-import { createBrowserHistory } from 'history';
+import { createHashHistory } from 'history';
 import _ from 'lodash';
 
 class HistoryService {
     routes = [];
 
-    history = createBrowserHistory()
+    history = createHashHistory()
 
     constructor() {
         this.history.listen(location => {
