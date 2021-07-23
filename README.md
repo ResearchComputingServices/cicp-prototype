@@ -1,5 +1,7 @@
 # <ins> CICP Prototype Website </ins>
 
+[Check it out!](https://researchcomputingservices.github.io/cicp-prototype/)
+
 ## Available Scripts
 
 In the project directory, you can run:
