@@ -98,7 +98,7 @@ function Main() {
                 position='absolute'
             >
                 <Toolbar className={classes.toolbar}>
-                    <a href='/'>
+                    <a href='/cicp-prototype'>
                         <Logo />
                     </a>
                     {!(currUrl === '/') && dimensions.width > 1000 && (
