@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/cicp-prototype/static/css/main.4d2a73d0.chunk.css",
-    "main.js": "/cicp-prototype/static/js/main.296212a6.chunk.js",
-    "main.js.map": "/cicp-prototype/static/js/main.296212a6.chunk.js.map",
+    "main.js": "/cicp-prototype/static/js/main.8cb9ae01.chunk.js",
+    "main.js.map": "/cicp-prototype/static/js/main.8cb9ae01.chunk.js.map",
     "runtime-main.js": "/cicp-prototype/static/js/runtime-main.c4206151.js",
     "runtime-main.js.map": "/cicp-prototype/static/js/runtime-main.c4206151.js.map",
     "static/js/2.ead881bd.chunk.js": "/cicp-prototype/static/js/2.ead881bd.chunk.js",
     "static/js/2.ead881bd.chunk.js.map": "/cicp-prototype/static/js/2.ead881bd.chunk.js.map",
     "index.html": "/cicp-prototype/index.html",
-    "precache-manifest.f3bc7a8a04c73f2c3b03db7e169a7d20.js": "/cicp-prototype/precache-manifest.f3bc7a8a04c73f2c3b03db7e169a7d20.js",
+    "precache-manifest.bbdd449f804ebe3476d79615a16734ab.js": "/cicp-prototype/precache-manifest.bbdd449f804ebe3476d79615a16734ab.js",
     "service-worker.js": "/cicp-prototype/service-worker.js",
     "static/css/main.4d2a73d0.chunk.css.map": "/cicp-prototype/static/css/main.4d2a73d0.chunk.css.map",
     "static/js/2.ead881bd.chunk.js.LICENSE.txt": "/cicp-prototype/static/js/2.ead881bd.chunk.js.LICENSE.txt",
@@ -23,6 +23,6 @@
     "static/js/runtime-main.c4206151.js",
     "static/js/2.ead881bd.chunk.js",
     "static/css/main.4d2a73d0.chunk.css",
-    "static/js/main.296212a6.chunk.js"
+    "static/js/main.8cb9ae01.chunk.js"
   ]
 }
