@@ -1,0 +1,17 @@
+{
+    "appBar": {
+        "title": "sRNA Computation"
+    },
+    "confirmation": {
+        "title": "Are you sure?",
+        "ok": "Ok",
+        "cancel": "Cancel"
+    },
+    "fileUploader": {
+        "chooseFile": "Choose File",
+        "changeFile": "Change File"
+    },
+    "error": {
+        "unexpected": "An unexpected error has occured."
+    }
+}
