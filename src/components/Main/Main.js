@@ -8,9 +8,9 @@ import {
     Typography,
     Tab,
 } from '@material-ui/core';
-import Divider from '../Divider';
 import { Search as SearchIcon } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core/styles';
+import Divider from '../Divider';
 import twitterIcon from '../../assets/images/twitter.png';
 import facebookIcon from '../../assets/images/facebook.png';
 import Logo from '../Logo';
@@ -82,13 +82,13 @@ function Main() {
     const classes = useStyles();
     const routesAssemblerService = useService('routesAssembler');
     const historyService = useService('history');
-    const [currUrl, setCurrUrl] = React.useState(historyService.getUrl())
+    const [currUrl, setCurrUrl] = React.useState(historyService.getUrl());
     const history = useHistory();
     const dimensions = useWindowSize();
 
     React.useEffect(() => history.listen(location => {
         const current_url = location.pathname;
-        setCurrUrl(current_url)
+        setCurrUrl(current_url);
     }), [history]);
 
     return (
@@ -111,10 +111,12 @@ function Main() {
                         justifyContent='center'
                     >
                         <img
+                            alt='link1'
                             className={classes.img}
                             src={twitterIcon}
                         />
                         <img
+                            alt='link2'
                             className={classes.img}
                             src={facebookIcon}
                         />
@@ -135,9 +137,11 @@ function Main() {
                 >
                     <Box className={classes.tabs}>
                         <Tab
-                            className={clsx({ [classes.selected]: currUrl.includes('/about-us')
+                            className={clsx({
+                                [classes.selected]: currUrl.includes('/about-us')
                                 || currUrl.includes('/meet-the-team')
-                                || currUrl.includes('/project-governance')})}
+                                || currUrl.includes('/project-governance'),
+                            })}
                             label='About us'
                             onClick={() => historyService.go('/about-us')}
                         />
@@ -145,7 +149,7 @@ function Main() {
                     </Box>
                 </AppBar>
                 <Switch>{routesAssemblerService.assemble(routes)}</Switch>
-                <Divider/>
+                <Divider />
             </main>
             <Box m={2}>
                 <Typography variant='h6'>Supported By</Typography>

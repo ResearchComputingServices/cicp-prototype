@@ -1,9 +1,9 @@
 import React from 'react';
+import { Typography, Box } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
 import TitleBanner from '../TitleBanner';
 import Divider from '../Divider';
 import Circle from '../Circle';
-import { Typography, Box } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
 
 export const useStyles = makeStyles(theme => ({
     root: {},
@@ -27,11 +27,9 @@ export const useStyles = makeStyles(theme => ({
             width: 150,
             padding: '30px',
         },
-        minHeight: 350
+        minHeight: 350,
     },
-    circle: {
-        margin: 10
-    }
+    circle: { margin: 10 },
 }));
 
 function LearnToInterpretData() {
@@ -43,20 +41,29 @@ function LearnToInterpretData() {
     ];
     const linksB = [
         { name: 'What is a Variable' },
-        { name: 'Predictin Trends' },
+        { name: 'Predicting Trends' },
         { name: 'Collecting' },
     ];
     return (
         <Box className={classes.root}>
             <TitleBanner>
-                <Typography className={classes.titleText} variant='h3'>Learn to Interpret Data</Typography>
+                <Typography
+                    className={classes.titleText}
+                    variant='h3'
+                >
+                    Learn to Interpret Data
+                </Typography>
             </TitleBanner>
-            <Divider/>
+            <Divider />
             <Box className={classes.contents}>
                 <Box className={classes.links}>
                     {linksA.map(
                         (link, i) => (
-                            <Circle className={classes.circle} key={i} onClick={link.onClick}>
+                            <Circle
+                                key={i}
+                                className={classes.circle}
+                                onClick={link.onClick}
+                            >
                                 <Typography variant='h5'>{link.name}</Typography>
                             </Circle>
                         ),
@@ -65,7 +72,11 @@ function LearnToInterpretData() {
                 <Box className={classes.links}>
                     {linksB.map(
                         (link, i) => (
-                            <Circle className={classes.circle} key={i} onClick={link.onClick}>
+                            <Circle
+                                key={i}
+                                className={classes.circle}
+                                onClick={link.onClick}
+                            >
                                 <Typography variant='h5'>{link.name}</Typography>
                             </Circle>
                         ),

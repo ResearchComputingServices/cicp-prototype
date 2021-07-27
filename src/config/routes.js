@@ -4,9 +4,12 @@ import AboutUs from '../components/AboutUs';
 import MeetTheTeam from '../components/MeetTheTeam';
 import ProjectGovernance from '../components/ProjectGovernance';
 import ResearchAndData from '../components/ResearchAndData';
-import AnalyzingAndLearning from '../components/AnalyzingAndLearning'
-import LearnToInterpretData from '../components/LearnToInterpretData'
+import AnalyzingAndLearning from '../components/AnalyzingAndLearning';
+import LearnToInterpretData from '../components/LearnToInterpretData';
 import NotFound from '../components/NotFound';
+import WhatIsDataTellingUs from '../components/WhatIsDataTellingUs';
+import OpinionQuestions from '../components/OpinionQuestions';
+import SizeOfOrganization from '../components/SizeOfOrganization';
 
 export default [
     {
@@ -36,6 +39,18 @@ export default [
     {
         path: '/learn-to-interpret-data',
         component: () => <LearnToInterpretData />,
+    },
+    {
+        path: '/what-is-data-telling-us',
+        component: () => <WhatIsDataTellingUs />,
+    },
+    {
+        path: '/opinion-questions',
+        component: () => <OpinionQuestions />,
+    },
+    {
+        path: '/size-of-organization',
+        component: () => <SizeOfOrganization />,
     },
     {
         path: '*',

@@ -1,14 +1,14 @@
 import React from 'react';
+import { Typography, Box } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
 import TitleBanner from '../TitleBanner';
 import Divider from '../Divider';
 import Circle from '../Circle';
-import { Typography, Box } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
 
 export const useStyles = makeStyles(theme => ({
     root: {
         height: '80vh',
-        minHeight: 800
+        minHeight: 800,
     },
     contents: {
         display: 'flex',
@@ -28,7 +28,6 @@ export const useStyles = makeStyles(theme => ({
         flexWrap: 'wrap',
         height: '300px',
         width: '100%',
-        flexWrap: 'wrap',
         '& img': {
             height: 150,
             width: 150,
@@ -47,14 +46,22 @@ function ResearchAndData() {
     return (
         <Box className={classes.root}>
             <TitleBanner>
-                <Typography className={classes.titleText} variant='h3'>Research & Data</Typography>
+                <Typography
+                    className={classes.titleText}
+                    variant='h3'
+                >
+                    Research & Data
+                </Typography>
             </TitleBanner>
-            <Divider/>
+            <Divider />
             <Box className={classes.contents}>
                 <Box className={classes.links}>
                     {links.map(
                         (link, i) => (
-                            <Circle key={i} onClick={link.onClick}>
+                            <Circle
+                                key={i}
+                                onClick={link.onClick}
+                            >
                                 <Typography variant='h5'>{link.name}</Typography>
                             </Circle>
                         ),

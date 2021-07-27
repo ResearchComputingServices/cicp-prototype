@@ -24,9 +24,7 @@ export const useStyles = makeStyles(theme => ({
             width: 180,
             height: 180,
         },
-        '&:hover': {
-            transform: 'scale(1.02)'
-        },
+        '&:hover': { transform: 'scale(1.02)' },
     },
 }));
 

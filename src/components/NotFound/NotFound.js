@@ -14,11 +14,11 @@ function NotFound({ className, style }) {
     return (
         <Box
             className={className}
+            height='50vh'
+            minHeight={700}
             my={5}
             style={style}
             textAlign='center'
-            height={'50vh'}
-            minHeight={700}
         >
             {Question}
             404 Page Not Found

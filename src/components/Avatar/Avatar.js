@@ -14,7 +14,11 @@ export const useStyles = makeStyles(() => ({
 const Avatar = ({ src, alt, className }) => {
     const classes = useStyles();
     return (
-        <img src={src} alt={alt} className={clsx(classes.root, className)}/>
+        <img
+            alt={alt}
+            className={clsx(classes.root, className)}
+            src={src}
+        />
     );
 };
 

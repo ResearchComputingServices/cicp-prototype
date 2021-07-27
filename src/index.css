@@ -109,3 +109,47 @@ html {
     font-family: 'Helvetica', 'Arial', sans-serif;
     font-weight: 100;
 }
+
+.hexagon-text {
+    position: absolute;
+    z-index: 1000;
+    width: 100%;
+    margin-top: 30px;
+    text-align: center;
+    font-size: 18px;
+}
+.hexagon {
+    position: relative;
+    width: 200px; 
+    height: 115.47px;
+    background-color: #ffffff;
+    margin: 57.74px 0;
+    border-left: solid 2px white;
+    border-right: solid 2px white;
+}
+
+.hexagon:before,
+.hexagon:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    width: 141.42px;
+    height: 141.42px;
+    -webkit-transform: scaleY(0.5774) rotate(-45deg);
+    -ms-transform: scaleY(0.5774) rotate(-45deg);
+    transform: scaleY(0.5774) rotate(-45deg);
+    background-color: inherit;
+    left: 27.2893px;
+}
+
+.hexagon:before {
+    top: -70.7107px;
+    border-top: solid 2.8284px white;
+    border-right: solid 2.8284px white;
+}
+
+.hexagon:after {
+    bottom: -70.7107px;
+    border-bottom: solid 2.8284px white;
+    border-left: solid 2.8284px white;
+}

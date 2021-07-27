@@ -1,125 +1,151 @@
 import React from 'react';
-import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
-import { Typography, Box } from '@material-ui/core';
-import Underline from '../Underline';
+import { Box } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+import Timeline from '@material-ui/lab/Timeline';
+import TimelineItem from '@material-ui/lab/TimelineItem';
+import TimelineSeparator from '@material-ui/lab/TimelineSeparator';
+import TimelineConnector from '@material-ui/lab/TimelineConnector';
+import TimelineContent from '@material-ui/lab/TimelineContent';
+import TimelineOppositeContent from '@material-ui/lab/TimelineOppositeContent';
+import TimelineDot from '@material-ui/lab/TimelineDot';
+import Paper from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography';
+import ArrowDown from '@material-ui/icons/ArrowDownward';
+import Album from '@material-ui/icons/Album';
+import Underline from '../Underline';
 
-export const useStyles = makeStyles(theme => ({
-    root: {
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        width: '90%',
-        paddingTop: theme.spacing(5),
-        textAlign: 'center',
-        marginBottom: theme.spacing(1),
+const useStyles = makeStyles(theme => ({
+    paper: {
+        padding: '10px 16px',
+        width: 450,
     },
-    segments: {
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'space-around',
-        flexWrap: 'wrap',
-        width: '100%',
-        marginTop: theme.spacing(2),
-    },
-    segment: {
-        display: 'flex',
-        flexDirection: 'column',
-        width: 150,
-    },
-    subTitle: {
-        display: 'flex',
-        justifyContent: 'center',
-        flexDirection: 'column',
-        alignItems: 'center',
-    },
-    title: {
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-
-    highlight: { color: theme.palette.primary.main },
-    mutedText: {
-        color: '#6c757d',
-        '&:hover': {
-            color: '#424242',
-            fontWeight: 550
-        },
-        cursor: 'pointer'
-    },
+    secondaryTail: { backgroundColor: theme.palette.secondary.main },
 }));
 
-const Timeline = () => {
+function Phases() {
     const classes = useStyles();
+    const phases = [
+        {
+            title: 'Phase-1',
+            content: (
+                <Paper
+                    className={classes.paper}
+                    elevation={3}
+                >
+                    <Typography>• Recruitment of study panel</Typography>
+                    <Typography>• Building of project infrastructure</Typography>
+                </Paper>
+            ),
+        },
+        {
+            title: 'Phase-2',
+            content: (
+                <Paper
+                    className={classes.paper}
+                    elevation={3}
+                >
+                    <Typography>• Consultions w Academic Advisory panel</Typography>
+                    <Typography>• Pilot testing : survey instrument; response rate; user interface; project reporting</Typography>
+                </Paper>
+            ),
+        },
+        {
+            title: 'Phase-3',
+            content: (
+                <Paper
+                    className={classes.paper}
+                    elevation={3}
+                >
+                    <Typography>• Launch project</Typography>
+                    <Typography>• Collection of data</Typography>
+                    <Typography>• Analysis of data</Typography>
+                    <Typography>• Reporting</Typography>
+                </Paper>
+            ),
+        },
+        {
+            title: 'Phase-4',
+            content: (
+                <Paper
+                    className={classes.paper}
+                    elevation={3}
+                >
+                    <Typography>• Continued collection, analysis and reporting of data</Typography>
+                    <Typography>• Recruitment of next cycles participants</Typography>
+                </Paper>
+            ),
+        },
+        {
+            title: 'Phase-5',
+            content: (
+                <Paper
+                    className={classes.paper}
+                    elevation={3}
+                >
+                    <Typography>• Conclusion of yr 1 survey</Typography>
+                    <Typography>• End of year conference & event</Typography>
+                    <Typography>• Evaluation of year 1 study</Typography>
+                    <Typography>• Preperation for launch of study year 2</Typography>
+                </Paper>
+            ),
+        },
+        {
+            title: 'Phase-6',
+            content: (
+                <Paper
+                    className={classes.paper}
+                    elevation={3}
+                >
+                    <Typography>
+                        • Recommendation for the long-term sustainability of
+                        {' '}
+                        <b>CICP</b>
+                    </Typography>
+                </Paper>
+            ),
+        },
+    ];
     return (
-        <div className={classes.root}>
-            <Box pb={3}>
-                <Typography className={classes.subTitle} variant='h4'>
+        <>
+            <Box
+                pb={3}
+                pt={3}
+            >
+                <Typography
+                    className={classes.subTitle}
+                    variant='h4'
+                >
                     Project Timeline
                     <Underline />
                 </Typography>
             </Box>
-            <div className={classes.segments}>
-                <div className={classes.segment}>
-                    <div className={classes.title}>
-                        <h3>Phase:1</h3> 
-                    </div>
-                    <p className={classes.mutedText}>
-                        Recruitment of panel & building project's infrastructure
-                    </p>
-                </div>
-                <Box mt={3}><ArrowForwardIosIcon color='primary'/></Box>
-                <div className={classes.segment}>
-                    <div className={classes.title}>
-                        <h3>Phase:2</h3>
-                    </div>
-                    <p className={classes.mutedText}>
-                        Pilot testing
-                    </p>
-                </div>
-                <Box mt={3}><ArrowForwardIosIcon color='primary'/></Box>
-                <div className={classes.segment}>
-                    <div className={classes.title}>
-                        <h3>Phase:3</h3>
-                    </div>
-                    <p className={classes.mutedText}>
-                        Launch
-                    </p>
-                </div>
-                <Box mt={3}><ArrowForwardIosIcon color='primary'/></Box>
-                <div className={classes.segment}>
-                    <div className={classes.title}>
-                        <h3>Phase:4</h3>
-                    </div>
-                    <p className={classes.mutedText}>
-                        Collection, analysis & reporting
-                    </p>
-                </div>
-                <Box mt={3}><ArrowForwardIosIcon color='primary'/></Box>
-                <div className={classes.segment}>
-                    <div className={classes.title}>
-                        <h3>Phase:5</h3>
-                    </div>
-                    <p className={classes.mutedText}>
-                        Accountability & Evaluation
-                    </p>
-                </div>
-                <Box mt={3}><ArrowForwardIosIcon color='primary'/></Box>
-                <div className={classes.segment}>
-                    <div className={classes.title}>
-                        <h3>Phase:6</h3>
-                    </div>
-                    <p className={classes.mutedText}>
-                        Recommendation for the longterm sustainability of
-                        {' '}
-                        <span className={classes.highlight}>CICP</span>
-                    </p>
-                </div>
-            </div>
-        </div>
+            <Timeline>
+                {phases.map((item, index) => (
+                    <TimelineItem key={index}>
+                        <TimelineOppositeContent>
+                            <Typography
+                                color='textPrimary'
+                                variant='body2'
+                            >
+                                {item.title}
+                            </Typography>
+                        </TimelineOppositeContent>
+                        <TimelineSeparator>
+                            <TimelineDot
+                                color={index % 2 === 0 ? 'primary' : 'secondary'}
+                            >
+                                {phases.length - 1 === index ? <Album /> : <ArrowDown />}
+                            </TimelineDot>
+                            {phases.length - 1 !== index && <TimelineConnector />}
+                        </TimelineSeparator>
+                        <TimelineContent>
+                            {item.content}
+                        </TimelineContent>
+                    </TimelineItem>
+                ))}
+            </Timeline>
+        </>
     );
-};
+}
 
-export default Timeline;
+export default Phases;

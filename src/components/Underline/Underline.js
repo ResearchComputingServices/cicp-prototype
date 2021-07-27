@@ -6,14 +6,14 @@ export const useStyles = makeStyles(theme => ({
         height: 1,
         width: 200,
         marginTop: 15,
-        background: theme.palette.primary.main
+        background: theme.palette.primary.main,
     },
 }));
 
 function Underline() {
     const classes = useStyles();
     return (
-        <div className={classes.root}/>
+        <div className={classes.root} />
     );
 }
 

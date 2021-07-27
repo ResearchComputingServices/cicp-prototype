@@ -2,7 +2,7 @@ import React from 'react';
 import clsx from 'clsx';
 import { Box } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import banner from '../../assets/images/banner.jpg'
+import banner from '../../assets/images/banner.jpg';
 
 export const useStyles = makeStyles(() => ({
     root: {
@@ -14,7 +14,7 @@ export const useStyles = makeStyles(() => ({
         justifyContent: 'center',
         height: 200,
         width: '100%',
-        textAlign: 'center'
+        textAlign: 'center',
     },
 }));
 

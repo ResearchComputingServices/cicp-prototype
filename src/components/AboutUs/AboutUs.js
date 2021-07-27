@@ -1,9 +1,9 @@
 import React from 'react';
-import TitleBanner from '../TitleBanner';
-import { useService } from '../../hooks'
-import Divider from '../Divider';
 import { Typography, Box } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+import TitleBanner from '../TitleBanner';
+import { useService } from '../../hooks';
+import Divider from '../Divider';
 import Circle from '../Circle';
 import MissionStatement from './MissionStatement';
 import Timeline from './Timeline';
@@ -42,20 +42,25 @@ function AboutUs() {
     const links = [
         {
             name: 'Meet the Team',
-            onClick: () => historyService.go('/meet-the-team')
+            onClick: () => historyService.go('/meet-the-team'),
         },
         {
             name: 'Project Governance',
-            onClick: () => historyService.go('/project-governance')
+            onClick: () => historyService.go('/project-governance'),
         },
         { name: 'Supporters' },
     ];
     return (
         <Box className={classes.root}>
             <TitleBanner className={classes.title}>
-                <Typography className={classes.titleText} variant='h3'>About Us</Typography>
+                <Typography
+                    className={classes.titleText}
+                    variant='h3'
+                >
+                    About Us
+                </Typography>
             </TitleBanner>
-            <Divider/>
+            <Divider />
             <Box className={classes.body}>
                 <MissionStatement />
                 <Timeline />
@@ -66,7 +71,10 @@ function AboutUs() {
                 >
                     {links.map(
                         (link, i) => (
-                            <Circle key={i} onClick={link.onClick}>
+                            <Circle
+                                key={i}
+                                onClick={link.onClick}
+                            >
                                 <Typography variant='h5'>{link.name}</Typography>
                             </Circle>
                         ),

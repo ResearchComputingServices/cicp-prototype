@@ -17,7 +17,8 @@ export const useStyles = makeStyles(theme => ({
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-around',
-        width: '100%',
+        marginBottom: theme.spacing(5),
+        width: '95%',
     },
     segment: {
         display: 'flex',
@@ -38,12 +39,11 @@ export const useStyles = makeStyles(theme => ({
     },
     highlight: { color: '#CF112D' },
     mutedText: {
-        color: '#6c757d',
+        color: '#5e5e5e',
         '&:hover': {
             color: '#424242',
-            fontWeight: 550
+            fontWeight: 550,
         },
-        cursor: 'pointer'
     },
     longParagraph: {
         width: '80%',
@@ -56,12 +56,23 @@ const MissionStatement = () => {
     return (
         <div className={classes.root}>
             <Box mb={3}>
-                <Typography className={classes.subTitle} variant='h4'>
+                <Typography
+                    className={classes.subTitle}
+                    variant='h4'
+                >
                     Mission Statement
                     <Underline />
                 </Typography>
             </Box>
-            <h3>{'The '}<b>CICP</b>{' has '}<b>{'3 fundamental goals'}</b></h3>
+            <div className={classes.segments}>
+                <p className={classes.mutedText}>
+                    This ambitious project aims to ensure that policymakers, practitioners, researchers, and the general public have accurate, timely, and comprehensive information about the charitable sector in Canada. Through weekly surveys and reports, an online interactive information and training hub, and monthly policy briefs, the
+                    {' '}
+                    <span className={classes.highlight}>Charity Insights Canada Project [CICP]</span>
+                    {' '}
+                    offers an exhaustive overview of the trends, challenges, and opportunities facing the Canadian charitable sector.
+                </p>
+            </div>
             <div className={classes.segments}>
                 <div className={classes.segment}>
                     <div className={classes.segmentTitle}>
@@ -81,7 +92,7 @@ const MissionStatement = () => {
                     <div className={classes.segmentTitle}>
                         <h3 className={classes.highlight}>(2)&nbsp;</h3>
                         <h3>To</h3>
-                        <h3 className={classes.highlight}>&nbsp;Build</h3>
+                        <h3 className={classes.highlight}>&nbsp;build</h3>
                     </div>
                     <p className={classes.mutedText}>
                         a lasting and flexible

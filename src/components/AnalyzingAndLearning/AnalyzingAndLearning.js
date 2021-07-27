@@ -1,15 +1,15 @@
 import React from 'react';
+import { Typography, Box } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
 import TitleBanner from '../TitleBanner';
 import Divider from '../Divider';
 import Circle from '../Circle';
-import { Typography, Box } from '@material-ui/core';
 import { useService } from '../../hooks';
-import { makeStyles } from '@material-ui/core/styles';
 
 export const useStyles = makeStyles(theme => ({
     root: {
         height: '80vh',
-        minHeight: 800
+        minHeight: 800,
     },
     contents: {
         display: 'flex',
@@ -39,25 +39,36 @@ export const useStyles = makeStyles(theme => ({
 
 function AnalyzingAndLearning() {
     const classes = useStyles();
-    const historyService = useService('history')
+    const historyService = useService('history');
     const links = [
-        { name: 'What is the data telling us?' },
         {
-            name: 'Learning to Interpret the Data',
-            onClick: () => historyService.go('/learn-to-interpret-data')
+            name: 'What is the data telling us?',
+            onClick: () => historyService.go('/what-is-data-telling-us'),
+        },
+        {
+            name: 'Learning to interpret the data',
+            onClick: () => historyService.go('/learn-to-interpret-data'),
         },
     ];
     return (
         <Box className={classes.root}>
             <TitleBanner>
-                <Typography className={classes.titleText} variant='h3'>Analyzing & Learning</Typography>
+                <Typography
+                    className={classes.titleText}
+                    variant='h3'
+                >
+                    Analyzing & Learning
+                </Typography>
             </TitleBanner>
-            <Divider/>
+            <Divider />
             <Box className={classes.contents}>
                 <Box className={classes.links}>
                     {links.map(
                         (link, i) => (
-                            <Circle key={i} onClick={link.onClick}>
+                            <Circle
+                                key={i}
+                                onClick={link.onClick}
+                            >
                                 <Typography variant='h5'>{link.name}</Typography>
                             </Circle>
                         ),
