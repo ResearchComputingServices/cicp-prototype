@@ -1,28 +1,29 @@
 {
   "files": {
-    "main.css": "/cicp-prototype/static/css/main.4d2a73d0.chunk.css",
-    "main.js": "/cicp-prototype/static/js/main.332eedd9.chunk.js",
-    "main.js.map": "/cicp-prototype/static/js/main.332eedd9.chunk.js.map",
+    "main.css": "/cicp-prototype/static/css/main.10171e79.chunk.css",
+    "main.js": "/cicp-prototype/static/js/main.362eaf37.chunk.js",
+    "main.js.map": "/cicp-prototype/static/js/main.362eaf37.chunk.js.map",
     "runtime-main.js": "/cicp-prototype/static/js/runtime-main.c4206151.js",
     "runtime-main.js.map": "/cicp-prototype/static/js/runtime-main.c4206151.js.map",
-    "static/js/2.48c9a68c.chunk.js": "/cicp-prototype/static/js/2.48c9a68c.chunk.js",
-    "static/js/2.48c9a68c.chunk.js.map": "/cicp-prototype/static/js/2.48c9a68c.chunk.js.map",
+    "static/js/2.7590404b.chunk.js": "/cicp-prototype/static/js/2.7590404b.chunk.js",
+    "static/js/2.7590404b.chunk.js.map": "/cicp-prototype/static/js/2.7590404b.chunk.js.map",
     "index.html": "/cicp-prototype/index.html",
-    "precache-manifest.523d73530f7c293f0b9cf30f9f6b91bc.js": "/cicp-prototype/precache-manifest.523d73530f7c293f0b9cf30f9f6b91bc.js",
+    "precache-manifest.6692512f997ab637af2c45153312b349.js": "/cicp-prototype/precache-manifest.6692512f997ab637af2c45153312b349.js",
     "service-worker.js": "/cicp-prototype/service-worker.js",
-    "static/css/main.4d2a73d0.chunk.css.map": "/cicp-prototype/static/css/main.4d2a73d0.chunk.css.map",
-    "static/js/2.48c9a68c.chunk.js.LICENSE.txt": "/cicp-prototype/static/js/2.48c9a68c.chunk.js.LICENSE.txt",
+    "static/css/main.10171e79.chunk.css.map": "/cicp-prototype/static/css/main.10171e79.chunk.css.map",
+    "static/js/2.7590404b.chunk.js.LICENSE.txt": "/cicp-prototype/static/js/2.7590404b.chunk.js.LICENSE.txt",
     "static/media/avatar-placeholder.png": "/cicp-prototype/static/media/avatar-placeholder.905d0803.png",
     "static/media/banner.jpg": "/cicp-prototype/static/media/banner.7e1a5058.jpg",
-    "static/media/carleton-background.jpeg": "/cicp-prototype/static/media/carleton-background.12754cc4.jpeg",
+    "static/media/carleton-landing-bg.jpg": "/cicp-prototype/static/media/carleton-landing-bg.6eec3a27.jpg",
     "static/media/carleton.svg": "/cicp-prototype/static/media/carleton.0bbc27c1.svg",
     "static/media/facebook.png": "/cicp-prototype/static/media/facebook.7428c0e4.png",
+    "static/media/governance.png": "/cicp-prototype/static/media/governance.e18e7bf8.png",
     "static/media/twitter.png": "/cicp-prototype/static/media/twitter.bdca145f.png"
   },
   "entrypoints": [
     "static/js/runtime-main.c4206151.js",
-    "static/js/2.48c9a68c.chunk.js",
-    "static/css/main.4d2a73d0.chunk.css",
-    "static/js/main.332eedd9.chunk.js"
+    "static/js/2.7590404b.chunk.js",
+    "static/css/main.10171e79.chunk.css",
+    "static/js/main.362eaf37.chunk.js"
   ]
 }
