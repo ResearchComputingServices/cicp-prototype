@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Box from '@material-ui/core/Box';
 
 function NotFound({ className, style }) {
@@ -26,15 +25,5 @@ function NotFound({ className, style }) {
         </Box>
     );
 }
-
-NotFound.propTypes = {
-    className: PropTypes.string,
-    style: PropTypes.object,
-};
-
-NotFound.defaultProps = {
-    className: '',
-    style: undefined,
-};
 
 export default NotFound;

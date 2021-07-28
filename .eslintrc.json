@@ -163,6 +163,7 @@
         "react-hooks/rules-of-hooks": "error",
         "react-hooks/exhaustive-deps": "warn",
         "import/prefer-default-export": 0,
-        "react/jsx-handler-names": 0
+        "react/jsx-handler-names": 0,
+        "react/prop-types": 0
     }
 }

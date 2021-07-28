@@ -5,17 +5,12 @@ import TitleBanner from '../TitleBanner';
 import Divider from '../Divider';
 import Circle from '../Circle';
 
-export const useStyles = makeStyles(theme => ({
-    root: {},
+export const useStyles = makeStyles(() => ({
     contents: {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-    },
-    titleText: {
-        color: theme.palette.background.default,
-        fontWeight: 900,
     },
     links: {
         display: 'flex',
@@ -45,14 +40,9 @@ function LearnToInterpretData() {
         { name: 'Collecting' },
     ];
     return (
-        <Box className={classes.root}>
+        <Box>
             <TitleBanner>
-                <Typography
-                    className={classes.titleText}
-                    variant='h3'
-                >
-                    Learn to Interpret Data
-                </Typography>
+                Learn to Interpret Data
             </TitleBanner>
             <Divider />
             <Box className={classes.contents}>

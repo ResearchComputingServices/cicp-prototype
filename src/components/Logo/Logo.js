@@ -1,6 +1,5 @@
 import React from 'react';
 import clsx from 'clsx';
-import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import logo from '../../assets/images/carleton.svg';
 
@@ -17,26 +16,12 @@ const Logo = ({ width, height, className, style }) => {
         <img
             alt='Carleton University'
             className={clsx(className, classes.root)}
-            height={height}
+            height={height || 64}
             src={logo}
             style={style}
-            width={width}
+            width={width || 250}
         />
     );
-};
-
-Logo.propTypes = {
-    height: PropTypes.number,
-    width: PropTypes.number,
-    className: PropTypes.string,
-    style: PropTypes.object,
-};
-
-Logo.defaultProps = {
-    height: 64,
-    width: 250,
-    className: '',
-    style: undefined,
 };
 
 export default Logo;

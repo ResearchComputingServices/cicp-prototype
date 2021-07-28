@@ -9,7 +9,6 @@ import MissionStatement from './MissionStatement';
 import Timeline from './Timeline';
 
 export const useStyles = makeStyles(theme => ({
-    root: {},
     body: {
         paddingTop: theme.spacing(5),
         display: 'flex',
@@ -17,10 +16,6 @@ export const useStyles = makeStyles(theme => ({
         justifyContent: 'center',
         flexDirection: 'column',
         alignItems: 'center',
-    },
-    titleText: {
-        color: theme.palette.background.default,
-        fontWeight: 900,
     },
     links: {
         display: 'flex',
@@ -51,14 +46,9 @@ function AboutUs() {
         { name: 'Supporters' },
     ];
     return (
-        <Box className={classes.root}>
+        <Box>
             <TitleBanner className={classes.title}>
-                <Typography
-                    className={classes.titleText}
-                    variant='h3'
-                >
-                    About Us
-                </Typography>
+                About Us
             </TitleBanner>
             <Divider />
             <Box className={classes.body}>

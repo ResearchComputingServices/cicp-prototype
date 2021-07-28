@@ -1,9 +1,9 @@
 import React from 'react';
-import { Typography, Box } from '@material-ui/core';
+import { Box } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import TitleBanner from '../TitleBanner';
 import Divider from '../Divider';
-import Underline from '../Underline';
+import Subtitle from '../Subtitle';
 import Chart from './Chart';
 import Steps from './Steps';
 
@@ -22,29 +22,12 @@ export const useStyles = makeStyles(theme => ({
         alignItems: 'center',
         flexDirection: 'column',
     },
-    titleText: {
-        color: theme.palette.background.default,
-        fontWeight: 900,
-    },
-    subTitle: {
-        display: 'flex',
-        justifyContent: 'center',
-        flexDirection: 'column',
-        alignItems: 'center',
-    },
 }));
 
 function OpinionQuestions() {
     const data = {
         options: {
-            dataLabels: {
-                enabled: false
-            },
-            chart: {
-                toolbar: {
-                    show: false
-                }
-            },
+            chart: { toolbar: { show: false } },
             title: {
                 text: 'How would you rate the government’s response to the COVID-19 crisis and it’s impact on the sector?',
                 align: 'right',
@@ -53,10 +36,10 @@ function OpinionQuestions() {
                 offsetY: 0,
                 floating: false,
                 style: {
-                    fontSize:  '14px',
-                    fontWeight:  'bold',
-                    fontFamily:  undefined,
-                    color:  '#263238'
+                    fontSize: '14px',
+                    fontWeight: 'bold',
+                    fontFamily: undefined,
+                    color: '#263238',
                 },
             },
             xaxis: { categories: ['Small Organization', 'Medium Organization', 'Large Organization'] },
@@ -79,22 +62,13 @@ function OpinionQuestions() {
     return (
         <Box className={classes.root}>
             <TitleBanner className={classes.title}>
-                <Typography
-                    className={classes.titleText}
-                    variant='h3'
-                >
-                    Size of Organization
-                </Typography>
+                Size of Organization
             </TitleBanner>
             <Divider />
             <Box className={classes.body}>
-                <Typography
-                    className={classes.subTitle}
-                    variant='h4'
-                >
+                <Subtitle>
                     Policy
-                    <Underline />
-                </Typography>
+                </Subtitle>
             </Box>
             <Steps />
             <Chart

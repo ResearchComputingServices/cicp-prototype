@@ -25,6 +25,9 @@ export const useStyles = makeStyles(theme => ({
             height: 180,
         },
         '&:hover': { transform: 'scale(1.02)' },
+        borderColor: 'rgba(212,212,212,0.5)',
+        borderStyle: 'solid',
+        borderWidth: 0.1,
     },
 }));
 

@@ -4,19 +4,23 @@ import { makeStyles } from '@material-ui/core/styles';
 import TitleBanner from '../TitleBanner';
 import Divider from '../Divider';
 import Circle from '../Circle';
+import Subtitle from '../Subtitle';
 import { useService } from '../../hooks';
 
 export const useStyles = makeStyles(theme => ({
-    root: {},
     contents: {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
     },
-    titleText: {
-        color: theme.palette.background.default,
-        fontWeight: 900,
+    body: {
+        paddingTop: theme.spacing(5),
+        display: 'flex',
+        paddingBottom: theme.spacing(3),
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexDirection: 'column',
     },
     links: {
         display: 'flex',
@@ -40,9 +44,9 @@ function SizeOfOrganization() {
         { name: 'Funding' },
         {
             name: 'Policy',
-            onClick: () => historyService.go('/opinion-questions')
+            onClick: () => historyService.go('/opinion-questions'),
         },
-        { name: 'Collaboration' }
+        { name: 'Collaboration' },
     ];
     const linksB = [
         { name: 'Workforce' },
@@ -51,15 +55,15 @@ function SizeOfOrganization() {
     return (
         <Box className={classes.root}>
             <TitleBanner>
-                <Typography
-                    className={classes.titleText}
-                    variant='h3'
-                >
-                    Size of Organization
-                </Typography>
+                Size of Organization
             </TitleBanner>
             <Divider />
             <Box className={classes.contents}>
+                <Box className={classes.body}>
+                    <Subtitle>
+                        Thematic Areas
+                    </Subtitle>
+                </Box>
                 <Box className={classes.links}>
                     {linksA.map(
                         (link, i) => (

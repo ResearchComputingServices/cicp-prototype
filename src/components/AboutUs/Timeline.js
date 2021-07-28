@@ -1,23 +1,24 @@
 import React from 'react';
-import { Box } from '@material-ui/core';
+import { Box, Paper, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import Timeline from '@material-ui/lab/Timeline';
-import TimelineItem from '@material-ui/lab/TimelineItem';
-import TimelineSeparator from '@material-ui/lab/TimelineSeparator';
-import TimelineConnector from '@material-ui/lab/TimelineConnector';
-import TimelineContent from '@material-ui/lab/TimelineContent';
-import TimelineOppositeContent from '@material-ui/lab/TimelineOppositeContent';
-import TimelineDot from '@material-ui/lab/TimelineDot';
-import Paper from '@material-ui/core/Paper';
-import Typography from '@material-ui/core/Typography';
+import {
+    Timeline,
+    TimelineItem,
+    TimelineSeparator,
+    TimelineConnector,
+    TimelineContent,
+    TimelineOppositeContent,
+    TimelineDot,
+} from '@material-ui/lab';
 import ArrowDown from '@material-ui/icons/ArrowDownward';
 import Album from '@material-ui/icons/Album';
-import Underline from '../Underline';
+import Subtitle from '../Subtitle';
 
 const useStyles = makeStyles(theme => ({
     paper: {
         padding: '10px 16px',
         width: 450,
+        '&:hover': { transform: 'scale(1.02)' },
     },
     secondaryTail: { backgroundColor: theme.palette.secondary.main },
 }));
@@ -111,13 +112,9 @@ function Phases() {
                 pb={3}
                 pt={3}
             >
-                <Typography
-                    className={classes.subTitle}
-                    variant='h4'
-                >
+                <Subtitle>
                     Project Timeline
-                    <Underline />
-                </Typography>
+                </Subtitle>
             </Box>
             <Timeline>
                 {phases.map((item, index) => (

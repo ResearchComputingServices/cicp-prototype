@@ -3,7 +3,6 @@ import { Router } from 'react-router-dom';
 import { CssBaseline } from '@material-ui/core';
 import { ThemeProvider, createTheme } from '@material-ui/core/styles';
 import Main from '../Main';
-import ToastProvider from '../ToastContext';
 import { useStore, useService } from '../../hooks';
 
 function Root() {
@@ -12,14 +11,11 @@ function Root() {
 
     return (
         <ThemeProvider theme={createTheme(theme)}>
-            <ToastProvider orientation='bottom-left'>
-                <CssBaseline />
-                <Router history={historyService.getHistory()}>
-                    <Main />
-                </Router>
-            </ToastProvider>
+            <CssBaseline />
+            <Router history={historyService.getHistory()}>
+                <Main />
+            </Router>
         </ThemeProvider>
-
     );
 }
 

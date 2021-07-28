@@ -87,8 +87,8 @@ function Main() {
     const dimensions = useWindowSize();
 
     React.useEffect(() => history.listen(location => {
-        const current_url = location.pathname;
-        setCurrUrl(current_url);
+        const currentUrl = location.pathname;
+        setCurrUrl(currentUrl);
     }), [history]);
 
     return (

@@ -5,7 +5,7 @@ import TitleBanner from '../TitleBanner';
 import Divider from '../Divider';
 import Circle from '../Circle';
 
-export const useStyles = makeStyles(theme => ({
+export const useStyles = makeStyles(() => ({
     root: {
         height: '80vh',
         minHeight: 800,
@@ -16,10 +16,6 @@ export const useStyles = makeStyles(theme => ({
         justifyContent: 'center',
         alignItems: 'center',
         height: 600,
-    },
-    titleText: {
-        color: theme.palette.background.default,
-        fontWeight: 900,
     },
     links: {
         display: 'flex',
@@ -46,12 +42,7 @@ function ResearchAndData() {
     return (
         <Box className={classes.root}>
             <TitleBanner>
-                <Typography
-                    className={classes.titleText}
-                    variant='h3'
-                >
-                    Research & Data
-                </Typography>
+                Research & Data
             </TitleBanner>
             <Divider />
             <Box className={classes.contents}>
