@@ -26,9 +26,9 @@ export default function RightAlignedTimeline() {
     const handleMouseOver = index => setCurrentHovered(index);
     const handleMouseOut = () => setCurrentHovered(null);
     const steps = [
-        'What is your overall level of trust in the Government when it comes to your charities current and future needs?',
-        'What in your opinion, are the primary challenges facing the sector?',
-        'What improvements do you think charities need to make in order to survive future crises?',
+        'How would you rate the government’s response to the COVID-19 crisis and it’s impact on the sector?',
+        'What is your overall level of trust in the Government when it comes to your charity’s current and future needs?',
+        'Should the government increase the disbursement quota and why?',
     ];
     return (
         <Timeline

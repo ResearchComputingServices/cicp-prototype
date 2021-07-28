@@ -37,15 +37,41 @@ export const useStyles = makeStyles(theme => ({
 function OpinionQuestions() {
     const data = {
         options: {
+            dataLabels: {
+                enabled: false
+            },
+            chart: {
+                toolbar: {
+                    show: false
+                }
+            },
+            title: {
+                text: 'How would you rate the government’s response to the COVID-19 crisis and it’s impact on the sector?',
+                align: 'right',
+                margin: 10,
+                offsetX: 0,
+                offsetY: 0,
+                floating: false,
+                style: {
+                    fontSize:  '14px',
+                    fontWeight:  'bold',
+                    fontFamily:  undefined,
+                    color:  '#263238'
+                },
+            },
             xaxis: { categories: ['Small Organization', 'Medium Organization', 'Large Organization'] },
+            yaxis: {
+                min: 1,
+                max: 10,
+            },
             plotOptions: { bar: { horizontal: true } },
             fill: { colors: ['#BF112B', '#BF112B', '#BF112B'] },
             dataLabels: { enabled: false },
         },
         series: [
             {
-                name: 'Organization',
-                data: [10, 40, 70],
+                name: 'Opinion',
+                data: [3, 5, 7],
             },
         ],
     };
@@ -66,7 +92,7 @@ function OpinionQuestions() {
                     className={classes.subTitle}
                     variant='h4'
                 >
-                    Opinion Questions
+                    Policy
                     <Underline />
                 </Typography>
             </Box>

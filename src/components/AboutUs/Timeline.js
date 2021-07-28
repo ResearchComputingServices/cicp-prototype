@@ -82,10 +82,10 @@ function Phases() {
                     className={classes.paper}
                     elevation={3}
                 >
-                    <Typography>• Conclusion of yr 1 survey</Typography>
-                    <Typography>• End of year conference & event</Typography>
-                    <Typography>• Evaluation of year 1 study</Typography>
-                    <Typography>• Preperation for launch of study year 2</Typography>
+                    <Typography>• Conclusion of yearly survey</Typography>
+                    <Typography>• End of the year conference & event</Typography>
+                    <Typography>• Evaluation of yearly survey</Typography>
+                    <Typography>• Preparation for launch of following year survey</Typography>
                 </Paper>
             ),
         },

@@ -1,67 +1,53 @@
 import React from 'react';
-import ArrowIcon from '@material-ui/icons/ArrowForward';
-import { makeStyles } from '@material-ui/core/styles';
 import { Typography, Box } from '@material-ui/core';
-import { useService } from '../../hooks';
+import { makeStyles } from '@material-ui/core/styles';
 import TitleBanner from '../TitleBanner';
 import Divider from '../Divider';
 import Circle from '../Circle';
-import Underline from '../Underline';
+import { useService } from '../../hooks';
 
 export const useStyles = makeStyles(theme => ({
     root: {},
-    body: {
-        paddingTop: theme.spacing(5),
+    contents: {
         display: 'flex',
-        paddingBottom: theme.spacing(5),
-        justifyContent: 'center',
         flexDirection: 'column',
+        justifyContent: 'center',
         alignItems: 'center',
     },
     titleText: {
         color: theme.palette.background.default,
         fontWeight: 900,
     },
-    content: {
-        justifyContent: 'center',
-        alignItems: 'center',
-        paddingTop: theme.spacing(5),
+    links: {
         display: 'flex',
-        flexDirection: 'row',
-    },
-    subTitle: {
-        display: 'flex',
-        justifyContent: 'center',
-        flexDirection: 'column',
         alignItems: 'center',
+        justifyContent: 'space-around',
+        flexWrap: 'wrap',
+        '& img': {
+            height: 150,
+            width: 150,
+            padding: '30px',
+        },
+        minHeight: 350,
     },
-    primaryCircle: {
-        background: '#383838',
-        color: 'white',
-    },
-    circle: {
-        marginTop: 10,
-        marginLeft: 30,
-        marginRight: 30,
-        marginBottom: 30,
-    },
-    arrowOne: {
-        transform: 'rotate(150deg)',
-        width: 150,
-    },
-    arrowTwo: {
-        transform: 'rotate(90deg)',
-        width: 200,
-    },
-    arrowThree: {
-        transform: 'rotate(30deg)',
-        width: 150,
-    },
+    circle: { margin: 50 },
 }));
 
 function SizeOfOrganization() {
-    const historyService = useService('history');
     const classes = useStyles();
+    const historyService = useService('history');
+    const linksA = [
+        { name: 'Funding' },
+        {
+            name: 'Policy',
+            onClick: () => historyService.go('/opinion-questions')
+        },
+        { name: 'Collaboration' }
+    ];
+    const linksB = [
+        { name: 'Workforce' },
+        { name: 'Emerging themes' },
+    ];
     return (
         <Box className={classes.root}>
             <TitleBanner>
@@ -69,58 +55,36 @@ function SizeOfOrganization() {
                     className={classes.titleText}
                     variant='h3'
                 >
-                    About Us
+                    Size of Organization
                 </Typography>
             </TitleBanner>
             <Divider />
-            <Box className={classes.body}>
-                <Box mb={3}>
-                    <Typography
-                        className={classes.subTitle}
-                        variant='h4'
-                    >
-                        Meet the Team
-                        <Underline />
-                    </Typography>
-                    <Box className={classes.content}>
-                        <Circle className={classes.primaryCircle}>
-                            <Typography variant='h5'>Size of Organization</Typography>
-                        </Circle>
-                    </Box>
-                    <Box className={classes.content}>
-                        <Box>
-                            <ArrowIcon
-                                className={classes.arrowOne}
-                                color='primary'
-                            />
-                        </Box>
-                        <Box>
-                            <ArrowIcon
-                                className={classes.arrowTwo}
-                                color='primary'
-                            />
-                        </Box>
-                        <Box>
-                            <ArrowIcon
-                                className={classes.arrowThree}
-                                color='primary'
-                            />
-                        </Box>
-                    </Box>
-                    <Box className={classes.content}>
-                        <Circle className={classes.circle}>
-                            <Typography variant='h5'>Policy Questions</Typography>
-                        </Circle>
-                        <Circle className={classes.circle}>
-                            <Typography variant='h5'>HR Questions</Typography>
-                        </Circle>
-                        <Circle
-                            className={classes.circle}
-                            onClick={() => historyService.go('/opinion-questions')}
-                        >
-                            <Typography variant='h5'>Opinion / Sentiment Questions</Typography>
-                        </Circle>
-                    </Box>
+            <Box className={classes.contents}>
+                <Box className={classes.links}>
+                    {linksA.map(
+                        (link, i) => (
+                            <Circle
+                                key={i}
+                                className={classes.circle}
+                                onClick={link.onClick}
+                            >
+                                <Typography variant='h5'>{link.name}</Typography>
+                            </Circle>
+                        ),
+                    )}
+                </Box>
+                <Box className={classes.links}>
+                    {linksB.map(
+                        (link, i) => (
+                            <Circle
+                                key={i}
+                                className={classes.circle}
+                                onClick={link.onClick}
+                            >
+                                <Typography variant='h5'>{link.name}</Typography>
+                            </Circle>
+                        ),
+                    )}
                 </Box>
             </Box>
         </Box>
