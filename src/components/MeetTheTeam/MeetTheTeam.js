@@ -93,7 +93,7 @@ function MeetTheTeam() {
                             name='Nathan Grasse'
                             teamRole='Research Associate'
                         />
-                        <TeamMember teamRole='Academic Advissory Council' />
+                        <TeamMember teamRole='Academic Advisory Council' />
                     </Box>
                 </Box>
             </Box>
